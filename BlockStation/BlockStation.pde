@@ -50,6 +50,7 @@ void setup()
 
    b_s.storage();
    stage.stage();
+   tentris.setting();
 }
 void draw()
 {

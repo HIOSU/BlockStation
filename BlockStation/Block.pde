@@ -4,9 +4,11 @@ class Block {
   int[] rgb;
   int x_f = 0;
   int y_f = 0;
-  Block(int[][] array, int[] rgb) {
+  int index;
+  Block(int[][] array, int[] rgb, int index) {
     this.array = array;
     this.rgb = rgb;
+    this.index = index;
   }
 
   //test
@@ -62,7 +64,7 @@ class Block {
       arrayCopy(new_array,barray);
       //this.array = new_array;
     }
-    return new Block(barray, this.rgb);
+    return new Block(barray, this.rgb, this.index);
   }
 
   int[][] getArray() {
@@ -75,5 +77,8 @@ class Block {
 
   int[] getRgb() {
     return rgb;
+  }
+  int getIndex(){
+    return index;
   }
 }

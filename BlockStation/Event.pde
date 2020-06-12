@@ -40,7 +40,7 @@ void mouseReleased()
   }
   else if ((mx > 770  && my > 70) && (mx < 970 & my < 420) && Screencount.equals("select") && helpcount == 0 ) //Gameselection 
   {
-    surface.setSize(580,430);
+    surface.setSize(645,430);
     background(#CBCBCB);
     Screencount = "tentris";
   }

@@ -28,10 +28,9 @@ class Stage
   {
     mob = b_s.get_mo();
     m = (int)random(mob.length);
-    Block[][] tes1 =  {{mob[1].rot(2), mob[3], mob[4], mob[5], mob[6].rot(2), mob[7], mob[8], mob[9],mob[11].rot(1)},
-                       {mob[12].rot(3), mob[14].rot(2), mob[15].rot(2), mob[17].rot(1), mob[18], mob[19].rot(2), mob[20].rot(3), mob[22].rot(1), mob[23]},
-                       {mob[25].rot(3), mob[26]}};
-
+Block[][] tes1 = {{mob[2].rot(2), mob[3].rot(3), mob[5], mob[6], mob[8], mob[11].rot(1), mob[12], mob[13].rot(2), mob[14].rot(2)},
+                       {mob[17], mob[18].rot(1), mob[19].rot(1), mob[20], mob[22], mob[27]}};
+                  //0056801200
     mobc1 = tes1;
 
     Block[][] tes2 = {{mob[1].rot(2), mob[2].rot(3), mob[4], mob[5], mob[7], mob[10].rot(1), mob[11], mob[12].rot(2), mob[13].rot(2)},
@@ -101,17 +100,18 @@ class Stage
     
       for (int b= 0; b < mobc1[p].length; b++)
       {
-        for (int i = 0; i< mobc1[p][b].getArray().length; i++) 
-        { //rect draw
-          for (int j = 0; j < mobc1[p][b].getArray()[0].length; j++)
-          {
-            if (mobc1[p][b].getArray()[i][j] ==1)
-            {
-              fill(mobc1[p][b].getRgb()[0], mobc1[p][b].getRgb()[1], mobc1[p][b].getRgb()[2]);
-              rect((j*30)+(155*(b%3)), (i*30)+110+(135*((int)(b/3))), 25, 25, 10);
-            }
-          }
-        }
+        draw_array(mobc1[p][b].getArray(),155*(b%3),110+(135*((int)(b/3))),true,mobc1[p][b].getIndex());
+        //for (int i = 0; i< mobc1[p][b].getArray().length; i++) 
+        //{ //rect draw
+        //  for (int j = 0; j < mobc1[p][b].getArray()[0].length; j++)
+        //  {
+        //    if (mobc1[p][b].getArray()[i][j] ==1)
+        //    {
+        //      fill(mobc1[p][b].getRgb()[0], mobc1[p][b].getRgb()[1], mobc1[p][b].getRgb()[2]);
+        //      rect((j*30)+(155*(b%3)), (i*30)+110+(135*((int)(b/3))), 25, 25, 10);
+        //    }
+        //  }
+        //}
       }
     
 
@@ -357,6 +357,26 @@ class Stage
       }
       stx = 700;
       sy = sy + 30;
+    }
+  }
+  void draw_array(int[][] array,int x, int y, boolean isBlock, int index){
+    noStroke();
+    for(int i = 0; i<array.length; i++){
+      for(int j = 0; j<array[i].length; j++){
+        if (isBlock == false){
+            fill(b_s.get_ten()[array[i][j]].getRgb()[0],b_s.get_ten()[array[i][j]].getRgb()[1],b_s.get_ten()[array[i][j]].getRgb()[2]);
+            //print(bs.get_ten().length);
+            rect(x+(30*j),y+(30*i),25,25,10);
+        }else{
+          if (array[i][j]== 0){
+            noFill();
+            noStroke();
+          }
+          else{
+          fill(b_s.get_mo()[index].getRgb()[0],b_s.get_mo()[index].getRgb()[1],b_s.get_mo()[index].getRgb()[2]);
+          rect(x+(30*j),y+(30*i),25,25,10);}
+        }
+      }
     }
   }
 }
