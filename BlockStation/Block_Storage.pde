@@ -2,7 +2,7 @@ class Block_Storage{
   Block[] mo;
   Block[] te;
   Block[] ten;
-  void Block_Storage(){
+  void storage(){
     this.mo = new Block[0];
 
     this.te = new Block[0];
@@ -14,7 +14,7 @@ class Block_Storage{
   {
     //1
     int [][] q = {{0,0,0,0,0},{0,0,0,0,0},{0,0,1,0,0},{0,0,0,0,0},{0,0,0,0,0}};
-    int [] co = {153,204,255};
+     int[] co = {153,204,255};
      ten = (Block[])append(ten, new Block( q, co ));
      
      //2
@@ -30,6 +30,7 @@ class Block_Storage{
      q = new int[][]{{0,0,0,0,0},{0,0,0,0,0},{0,1,1,0,0},{0,0,1,0,0},{0,0,0,0,0}};
      co = new int[] {051,000,204};
      ten = (Block[])append(ten, new Block( q, co ));
+     mo = (Block[])append(mo, new Block( q, co ));
      
      //4
      q = new int [][] {{0,0,0,0,0},{0,0,0,0,0},{0,1,1,1,1},{0,0,0,0,0},{0,0,0,0,0}};
@@ -38,6 +39,16 @@ class Block_Storage{
      te = (Block[])append(te, new Block( q, co ));
   
      q = new int [][] {{0,0,0,0,0},{0,0,0,0,0},{0,1,1,1,0},{0,0,1,0,0},{0,0,0,0,0}};
+     co = new int[] {051,000,255};
+     te = (Block[])append(te, new Block( q, co ));
+     mo = (Block[])append(mo, new Block( q, co ));
+     
+     q = new int [][] {{0,0,0,0,0},{0,0,0,0,0},{0,1,1,0,0},{0,0,1,1,0},{0,0,0,0,0}};
+     co = new int[] {051,000,255};
+     te = (Block[])append(te, new Block( q, co ));
+     mo = (Block[])append(mo, new Block( q, co ));
+     
+     q = new int [][] {{0,0,0,0,0},{0,0,0,0,0},{0,0,1,1,0},{0,1,1,0,0},{0,0,0,0,0}};
      co = new int[] {051,000,255};
      te = (Block[])append(te, new Block( q, co ));
      mo = (Block[])append(mo, new Block( q, co ));
@@ -108,16 +119,16 @@ class Block_Storage{
      co = new int[] {153,102,204};
      mo = (Block[])append(mo, new Block( q, co ));
      
+     q = new int[][] {{0,0,0,0,0},{0,1,1,0,0},{0,0,1,1,0},{0,0,1,0,0},{0,0,0,0,0}};
+     co = new int[] {153,102,204};
+     mo = (Block[])append(mo, new Block( q, co ));
+     
      q = new int[][] {{0,0,0,0,0},{0,0,1,1,0},{0,0,1,1,0},{0,0,1,0,0},{0,0,0,0,0}};
      co = new int[] {153,204,255};
      mo = (Block[])append(mo, new Block( q, co ));
      
      q = new int[][] {{0,0,0,0,0},{0,0,1,1,0},{0,0,1,1,0},{0,0,0,1,0},{0,0,0,0,0}};
      co = new int[] {102,204,204};
-     mo = (Block[])append(mo, new Block( q, co ));
-     
-     q = new int[][] {{0,0,0,0,0},{0,0,1,1,0},{0,0,1,1,0},{0,0,1,0,0},{0,0,0,0,0}};
-     co = new int[] {153,153,204};
      mo = (Block[])append(mo, new Block( q, co ));
      
      q = new int[][] {{0,0,0,0,0},{0,1,0,0,0},{0,1,1,0,0},{0,0,1,1,0},{0,0,0,0,0}};

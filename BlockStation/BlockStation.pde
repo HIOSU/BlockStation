@@ -1,8 +1,10 @@
 Event  event;
+Block_Storage b_s = new Block_Storage();
 Stage stage = new Stage();
 Screen screen = new Screen();
 Tentris tentris = new Tentris();
 Tetris tetris = new Tetris();
+
 
 PImage imo;
 PImage ite;
@@ -18,6 +20,7 @@ int snum;
 int snumX;
 int stx;
 int sy;
+int p =0;
 int term = 30;
 int tenx;
 int teny = 80;
@@ -39,10 +42,14 @@ Block_Storage bs = new Block_Storage();
 
 void settings(){
   size(sizeX,sizeY);
+//  fullScreen();
 }
 
 void setup()
 {
+
+   b_s.storage();
+   stage.stage();
 }
 void draw()
 {

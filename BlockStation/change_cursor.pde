@@ -25,7 +25,27 @@ void change_cursor(){
     {
       cursor(HAND);
     }
-    else if ((mx > 0 && my > 450) && (mx < 50 & my < 500) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")))
+    else if ((mx > 0 && my > 450) && (mx < 50 & my < 500) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && (!Screencount.equals("stage1")&& !Screencount.equals("stage2")&& !Screencount.equals("stage3") && !Screencount.equals("stage4") && !Screencount.equals("stage5")))
+    {
+      cursor(HAND);
+    }
+    else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && Screencount.equals("stage1"))
+    {
+      cursor(HAND);
+    }
+        else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && Screencount.equals("stage2"))
+    {
+      cursor(HAND);
+    }
+        else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && Screencount.equals("stage3"))
+    {
+      cursor(HAND);
+    }
+        else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && Screencount.equals("stage4"))
+    {
+      cursor(HAND);
+    }
+        else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && !(Screencount.equals("main")) && !(Screencount.equals("tetris")) && !(Screencount.equals("tentris")) && Screencount.equals("stage5"))
     {
       cursor(HAND);
     }
