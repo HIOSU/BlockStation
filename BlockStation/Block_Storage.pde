@@ -4,10 +4,14 @@ class Block_Storage{
   Block[] ten;
   void storage(){
     this.mo = new Block[0];
-
+    
     this.te = new Block[0];
 
     this.ten = new Block[0];
+    int[] co = {255,255,255};
+    mo = (Block[])append(mo, new Block(new int[][] {{}}, co));
+    te = (Block[])append(te, new Block(new int[][] {{}}, co));
+    ten = (Block[])append(ten, new Block(new int[][] {{}}, co));
     makeBlock();
   }
   void makeBlock()
