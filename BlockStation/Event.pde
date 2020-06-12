@@ -189,6 +189,28 @@ void mouseReleased()
       p--;
     }
   }
+      else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage5")) // stage P
+  {
+    if (p == 2)
+    {
+      p =0;
+    }
+    else 
+    {
+      p++;
+    }
+  }
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage5")) // stage P
+  {
+    if (p == 0)
+    {
+      p = 2;
+    }
+    else 
+    {
+      p--;
+    }
+  }
   else  if ((mx > 0 && my > 450) && (mx < 50 & my < 500) && Screencount.equals("stage") ) // back
   {
     background(#CBCBCB);
@@ -206,24 +228,28 @@ void mouseReleased()
   }
     else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage2")  ) // back
   {
+    surface.setSize(1000,500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
     else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage3")  ) // back
   {
+    surface.setSize(1000,500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
     else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage4")  ) // back
   {
+    surface.setSize(1000,500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
     else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage5")  ) // back
   {
+    surface.setSize(1000,500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
