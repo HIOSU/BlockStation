@@ -382,7 +382,7 @@ class Stage
       sy = sy + 30;
     }
   }
-  void draw_array(int[][] array,int x, int   y, boolean isBlock, int index){
+  void draw_array(int[][] array,int x, int y, boolean isBlock, int index){
     noStroke();
     for(int i = 0; i<array.length; i++){
       for(int j = 0; j<array[i].length; j++){
