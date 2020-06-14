@@ -49,7 +49,7 @@ void setup()
 
   
    b_s.storage();
-   //stage.stage();
+   stage.stage();
    tentris.setting();
    
 }

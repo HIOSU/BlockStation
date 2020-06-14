@@ -2,7 +2,7 @@ class Tentris{
   int maxscore = 0;
   int score = 0;
   Block nextBlock = null;
-  //Item item = null;
+//  Item item = null;
   int nowBlock = 0;
   int[][] tentenArray = {{0,0,0,0,0,0,0,0,0,0},
                           {0,0,0,0,0,0,0,0,0,0},

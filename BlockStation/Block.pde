@@ -74,6 +74,10 @@ class Block {
     }
     return new Block(barray, this.rgb, this.index);
   }
+  Block copyBlock()
+  {
+    return new Block(this.array, this.rgb, this.index);
+  }
   
   void setBflag(boolean flag)
   {
