@@ -1,14 +1,22 @@
 class Block {
-  int[][] array;
-  int[] blockArea = {0, 0};
-  int[] rgb;
   int x_f = 0;
   int y_f = 0;
-  int index;
+  int index; 
+  
+  int[] rgb;
+  int[] location = {0,0};
+  int[] blockArea = {0, 0};
+  
+  int[][] array;
+  
+  boolean isCilcked =false;
+  boolean bflag = false;
+  
   Block(int[][] array, int[] rgb, int index) {
     this.array = array;
     this.rgb = rgb;
     this.index = index;
+    
   }
 
   //test
@@ -66,6 +74,28 @@ class Block {
     }
     return new Block(barray, this.rgb, this.index);
   }
+  
+  void setBflag(boolean flag)
+  {
+    this.bflag = flag;
+  }
+  
+  void setIsCilcked(boolean Cilcked)
+  {
+    this.isCilcked = Cilcked;
+  }
+  void setIocation(int[] location)
+  {
+    this.location = location;
+  }
+  boolean getBflag()
+  {
+    return bflag;
+  }
+  int[] getIocation()
+  {
+    return location;
+  }
 
   int[][] getArray() {
     return array;
@@ -80,5 +110,9 @@ class Block {
   }
   int getIndex(){
     return index;
+  }
+  boolean getIsCilcked()
+  {
+    return isCilcked;
   }
 }
