@@ -1,9 +1,9 @@
 Event  event;
-Block_Storage b_s = new Block_Storage();
 Stage stage = new Stage();
 Screen screen = new Screen();
-Tentris tentris = new Tentris();
 Tetris tetris = new Tetris();
+Tentris tentris = new Tentris();
+Block_Storage b_s = new Block_Storage();
 
 
 PImage imo;
@@ -38,7 +38,6 @@ boolean stagecount5 = true;
 boolean StartmouseXY = false;
 boolean ExitmouseXY = false;
 
-Block_Storage bs = new Block_Storage();
 
 void settings(){
   size(sizeX,sizeY);
@@ -48,6 +47,7 @@ void settings(){
 void setup()
 {
 
+  
    b_s.storage();
    stage.stage();
    tentris.setting();

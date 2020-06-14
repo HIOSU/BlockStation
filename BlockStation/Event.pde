@@ -52,6 +52,7 @@ void mouseReleased()
   }
   else if ((mx > 150 && my > 200) && (mx < 250 & my < 300) && Screencount.equals("stage") && stagecount1 == true)// Chapter
   {
+      stage.stage();
       surface.setSize(1200,700);
       background(#CBCBCB);
       Screencount = "stage1";
@@ -271,8 +272,95 @@ void mouseReleased()
 }
 void mouseDragged()
 {
+  }
+  if ( p < 2 && (Screencount.equals("stage1") || Screencount.equals("stage2") || Screencount.equals("stage3")  || Screencount.equals("stage4") || Screencount.equals("stage5")))
+    {
+      for (int i= 0; i < stage.getMobc1()[p].length; i++)
+      {
+        if(stage.getMobc1()[p][i].getIsCilcked() == true)
+        {
+          if (mouseX > 700)// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
+          {
+            stage.getMobc1()[p][i].setBflag(true);
+          }
+          else 
+          {
+            stage.xy = new int[] {155*(i%3), 110+(135*((int)(i/3)))};
+            stage.mobc1[p][i].setIocation(stage.xy);
+            if (stage.getMobc1()[p][i].getBflag() == false)
+            {
+              stage.getMobc1s()[p][i/3][i%3] = 1;
+            }
+          }
+        
+          stage.getMobc1()[p][i].setIsCilcked(false);
+        }
+      }
+    }
   
 }
+
+  void mousePressed()
+  {
+    //if (mouseButton == LEFT)
+    //{
+    //  if (count < 3)
+    //  {
+    //    for (int i = 0; i < 3 ;i++ )
+    //    {
+    //      for (int j= 0; j < 3; j++)
+    //      {
+    //       if ((mouseX  > 0 + (j*150) && mouseY > 110 + (i*150)) && (mouseX < 150+ (j*150) && mouseY < 260+ (i*150)) && count_f == 0)
+    //        {
+    //          draw_array(stage.getMobc1()[0][0].getArray(), mouseX, mouseY, true, stage.getMobc1()[0][0].getIndex());
+    //          count_f = 1;
+    //          stage.getMobc1()s[p][i][j] = 0;
+    //          noCursor();
+    //          count+=1;
+    //        }
+    //      }
+    //    }
+    //  }
+    //}
+    //if(stage.getMobc1()[0][0].getIsCilcked() == false)  155*(b%3), 110+(135*((int)(b/3))),
+   
+    if ( mouseButton == LEFT && (Screencount.equals("stage1") || Screencount.equals("stage2") || Screencount.equals("stage3")  || Screencount.equals("stage4") || Screencount.equals("stage5")))
+    {
+      if ( p < 2 )
+      {
+        for (int i= 0; i < stage.getMobc1()[p].length; i++)
+        {
+          if(stage.mobc1s[p][i/3][i%3] == 1)
+          {
+            if ((mouseX  > 155*(i%3) && mouseY > 110+(155*((int)(i/3))) && (mouseX < 150+ (155*(i%3)) && mouseY < 260+ (155*((int)(i/3))))))
+            {
+              stage.getMobc1()[p][i].setIsCilcked(true);
+              stage.getMobc1s()[p][i/3][i%3] = 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  void mouseDragged()
+  {
+    if ( p < 2 && (Screencount.equals("stage1") || Screencount.equals("stage2") || Screencount.equals("stage3")  || Screencount.equals("stage4") || Screencount.equals("stage5")))
+    {
+      for (int i= 0; i < stage.getMobc1()[p].length; i++)
+      {
+        if (stage.getMobc1()[p][i].getIsCilcked() == true)
+        {
+          int [] mxy = {(int)mouseX, (int)mouseY};
+          
+          stage.getMobc1()[p][i].setIocation(mxy);
+          //print(stage.getMobc1()[p][i].getIocation()[0] + "," +  stage.getMobc1()[p][i].getIocation()[1]);
+         // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getIocation()[0], stage.getMobc1()[p][i].getIocation()[1], true, stage.getMobc1()[p][i].getIndex());
+          
+        
+        }
+      }
+    }
+  }
 
 
 boolean StartmouseXY()
