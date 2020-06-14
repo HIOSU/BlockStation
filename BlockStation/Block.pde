@@ -1,16 +1,42 @@
 class Block {
   int[][] array;
-  int[] blockArea = {0, 0};
+  int[] blockArea = {5, 5, 0, 0}; // first x, first y, last x, last y
+  int blockAmount = 0;
   int[] rgb;
-  int x_f = 0;
-  int y_f = 0;
+  //int x_f = 0;
+  //int y_f = 0;
   int index;
   Block(int[][] array, int[] rgb, int index) {
     this.array = array;
     this.rgb = rgb;
     this.index = index;
+    BlockInfo();
   }
-
+  void BlockInfo()
+  {
+    for(int i = 0; i < this.array.length; i++)
+    {
+      for(int j = 0; j< this.array[i].length; j++)
+      {
+        if (array[i][j] == 1){
+          blockAmount++;
+          if (blockArea[0] > j){
+            blockArea[0] = j;
+          }
+          if (blockArea[1] > i){
+            blockArea[1] = i;
+          }
+          if (blockArea[2] < j){
+            blockArea[2] = j;
+          }
+          if (blockArea[3] < i){
+            blockArea[3] = i;
+          }
+          
+        }
+      }
+    }
+  }
   //test
   //void BlockArea()
   //{
@@ -58,6 +84,8 @@ class Block {
 
       for (int i = 0; i <= barray.length-1; i++) {
         for (int j = 0; j <= barray.length-1; j++) {
+          println(barray.length-1-i);
+          println("----------------------------");
           new_array[i][j] = barray[j][barray.length-1-i];
         }
       }
@@ -80,5 +108,8 @@ class Block {
   }
   int getIndex(){
     return index;
+  }
+  int getBlockAmount(){
+    return blockAmount;
   }
 }

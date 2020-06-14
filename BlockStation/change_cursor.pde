@@ -56,6 +56,9 @@ void change_cursor(){
       else if ((mx > 0 && my > 380) && (mx < 50 & my < 430) && Screencount.equals("tentris")  ) // back
     {
         cursor(HAND);
+    } else if ((mx > 645 && my > 370) && (mx < 695 & my < 420) && Screencount.equals("tentris")  ) // re
+    {
+        cursor(HAND);
     }  
 
     
