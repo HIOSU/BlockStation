@@ -4,7 +4,7 @@ class Block {
 
   int[] rgb;
   int[] location = {0,0};
-  int[] blockArea = {0, 0};
+
   int[] blockArea = {5, 5, 0, 0}; // first x, first y, last x, last y
 
   int[][] array;
@@ -143,6 +143,7 @@ class Block {
   }
   int getBlockAmount(){
     return blockAmount;
+  }
   boolean getIsCilcked()
   {
     return isCilcked;

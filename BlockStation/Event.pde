@@ -265,10 +265,6 @@ void mouseReleased()
   }  else if ((mx > 645 && my > 370) && (mx < 695 & my < 420) && Screencount.equals("tentris")){ // re
     tentris.reset();
   }
-}
-void mouseDragged()
-{
-  }
   if ( p < 2 && Screencount.equals("stage1"))
   {
     BlockR(stage.mobc1, stage.mobc1s);
@@ -312,6 +308,7 @@ void mouseDragged()
     //  }
     //}
   
+
 }
 
 void mousePressed()
