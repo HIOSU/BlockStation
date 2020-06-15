@@ -56,6 +56,7 @@ void mouseReleased()
   }
   else if ((mx > 300 && my > 200) && (mx < 400 & my < 300) && Screencount.equals("stage") && stagecount2 == true)// Chapter
   {
+    stage.stage();
     surface.setSize(1200, 700);
     background(#CBCBCB);
     Screencount = "stage2";
@@ -63,18 +64,21 @@ void mouseReleased()
   }
   else if ((mx > 450 && my > 200) && (mx < 500 & my < 300) && Screencount.equals("stage") && stagecount3 == true)// Chapter
   {
+    stage.stage();
     surface.setSize(1200, 700);
     background(#CBCBCB);
     Screencount = "stage3";
   }
   else if ((mx > 550 && my > 200) && (mx < 650 & my < 300) && Screencount.equals("stage") && stagecount4 == true)// Chapter
   {
+    stage.stage();
     surface.setSize(1200, 700);
     background(#CBCBCB);
     Screencount = "stage4";
   }
   else if ((mx > 700 && my > 200) && (mx < 800 & my < 300) && Screencount.equals("stage") && stagecount5 == true)// Chapter
   {
+    stage.stage();
     surface.setSize(1200, 700);
     background(#CBCBCB);
     Screencount = "stage5";
@@ -99,7 +103,7 @@ void mouseReleased()
     background(#CBCBCB);
     helpcount = 0;
   }
-  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage1")) // stage P
+  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage1") && CheckM == false) // stage P
   {
     if (p == 2)
     {
@@ -110,7 +114,7 @@ void mouseReleased()
       p++;
     }
   }
-  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage1")) // stage P
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage1") && CheckM == false) // stage P
   {
     if (p == 0)
     {
@@ -121,7 +125,7 @@ void mouseReleased()
       p--;
     }
   }
-  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage2")) // stage P
+  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage2")&& CheckM == false) // stage P
   {
     if (p == 2)
     {
@@ -132,7 +136,7 @@ void mouseReleased()
       p++;
     }
   }
-  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage2")) // stage P
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage2")&& CheckM == false) // stage P
   {
     if (p == 0)
     {
@@ -143,7 +147,7 @@ void mouseReleased()
       p--;
     }
   }
-  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage3")) // stage P
+  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage3")&& CheckM == false) // stage P
   {
     if (p == 2)
     {
@@ -154,7 +158,7 @@ void mouseReleased()
       p++;
     }
   }
-  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage3")) // stage P
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage3")&& CheckM == false) // stage P
   {
     if (p == 0)
     {
@@ -165,7 +169,7 @@ void mouseReleased()
       p--;
     }
   }
-  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage4")) // stage P
+  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage4")&& CheckM == false) // stage P
   {
     if (p == 2)
     {
@@ -176,7 +180,7 @@ void mouseReleased()
       p++;
     }
   }
-  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage4")) // stage P
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage4")&& CheckM == false) // stage P
   {
     if (p == 0)
     {
@@ -187,7 +191,7 @@ void mouseReleased()
       p--;
     }
   }
-  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage5")) // stage P
+  else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage5")&& CheckM == false) // stage P
   {
     if (p == 2)
     {
@@ -198,7 +202,7 @@ void mouseReleased()
       p++;
     }
   }
-  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage5")) // stage P
+  else if ((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage5")&& CheckM == false) // stage P
   {
     if (p == 0)
     {
@@ -209,13 +213,13 @@ void mouseReleased()
       p--;
     }
   }
-  else  if ((mx > 0 && my > 450) && (mx < 50 & my < 500) && Screencount.equals("stage") ) // back
+  else  if ((mx > 0 && my > 450) && (mx < 50 & my < 500) && Screencount.equals("stage") && CheckM == false ) // back
   {
     background(#CBCBCB);
     textFont(basic, 30);
     Screencount = "select";
   }
-  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage1")  ) // back
+  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage1") && CheckM == false ) // back
   {
     surface.setSize(1000, 500);
     p=0;
@@ -223,28 +227,28 @@ void mouseReleased()
     Screencount = "stage";
     //stagecount2 = true;
   }
-  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage2")  ) // back
+  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage2") && CheckM == false ) // back
   {
     surface.setSize(1000, 500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
-  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage3")  ) // back
+  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage3") && CheckM == false ) // back
   {
     surface.setSize(1000, 500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
-  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage4")  ) // back
+  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage4") && CheckM == false ) // back
   {
     surface.setSize(1000, 500);
     p=0;
     background(#CBCBCB);
     Screencount = "stage";
   }
-  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage5")  ) // back
+  else if ((mx > 0 && my > 650) && (mx < 50 & my < 700) && Screencount.equals("stage5") && CheckM == false ) // back
   {
     surface.setSize(1000, 500);
     p=0;
@@ -277,11 +281,11 @@ void mouseReleased()
   {
     BlockR(stage.mobc3, stage.mobc3s);
   }
-  else if ( p < 2 && Screencount.equals("stage4"))
+  else if (Screencount.equals("stage4"))
   {
     BlockR(stage.mobc4, stage.mobc4s);
   }
-  else if ( p < 2 && Screencount.equals("stage5"))
+  else if (Screencount.equals("stage5"))
   {
     BlockR(stage.mobc5, stage.mobc5s);
   }
@@ -340,11 +344,13 @@ void mousePressed()
 
   if (p < 2 && mouseButton == LEFT && (Screencount.equals("stage1")))
   {
+    noCursor();
+    
     //if ( p < 2 )
     //{
     BlockP(stage.mobc1, stage.mobc1s);
   }
-  if ( p < 2 && mouseButton == LEFT && (Screencount.equals("stage2")))
+  else if ( p < 2 && mouseButton == LEFT && (Screencount.equals("stage2")))
   {
     //if ( p < 2 )
     //{
@@ -356,13 +362,13 @@ void mousePressed()
     //{
     BlockP(stage.mobc3, stage.mobc3s);
   }
-  else if ( mouseButton == LEFT && (Screencount.equals("stage4")))
+  else if (mouseButton == LEFT && (Screencount.equals("stage4")))
   {
     //if ( p < 2 )
     //{
-    BlockP(stage.mobc4, stage.mobc5s);
+    BlockP(stage.mobc4, stage.mobc4s);
   }
-  else if ( mouseButton == LEFT && (Screencount.equals("stage5")))
+  else if (mouseButton == LEFT && (Screencount.equals("stage5")))
   {
     //if ( p < 2 )
     //{
@@ -385,6 +391,7 @@ void mouseDragged()
 {
   if ( p < 2 && (Screencount.equals("stage1")))
   {
+    
     BlockD(stage.mobc1);
   }
   else if (p < 2 && Screencount.equals("stage2"))
@@ -395,11 +402,11 @@ void mouseDragged()
   {
     BlockD(stage.mobc3);
   }
-  else if (Screencount.equals("stage4"))
+  else if (p < 3 && Screencount.equals("stage4"))
   {
     BlockD(stage.mobc4);
   } 
- else if (Screencount.equals("stage5"))
+ else if (p < 3 && Screencount.equals("stage5"))
   {
     BlockD(stage.mobc5);
   }
@@ -461,7 +468,6 @@ void BlockD(Block [][] blocks)
 }
 void BlockP(Block [][] block, int [][][] blocks)
 {
-
     for (int i= 0; i < block[p].length; i++)
     {
       if (blocks[p][i/3][i%3] == 1)
@@ -470,6 +476,8 @@ void BlockP(Block [][] block, int [][][] blocks)
         {
           block[p][i].setIsCilcked(true);
           blocks[p][i/3][i%3] = 0;
+          CheckM = true;
+          noCursor();
         }
       }
     }
@@ -484,6 +492,7 @@ void BlockR(Block [][] block, int [][][] blocks)
       if (mouseX > 700)// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
       {
         block[p][i].setBflag(true);
+        CheckM = false;
       }
       else 
       {
@@ -492,9 +501,9 @@ void BlockR(Block [][] block, int [][][] blocks)
         if (block[p][i].getBflag() == false)
         {
           blocks[p][i/3][i%3] = 1;
+          CheckM = false;
         }
       }
-
       block[p][i].setIsCilcked(false);
     }
   }

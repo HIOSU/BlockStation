@@ -34,10 +34,9 @@ boolean stagecount3 = true;
 boolean stagecount4 = true;
 boolean stagecount5 = true;
 
-
 boolean StartmouseXY = false;
 boolean ExitmouseXY = false;
-
+boolean CheckM = false;
 
 void settings(){
   size(sizeX,sizeY);
@@ -57,6 +56,7 @@ void draw()
 {
   now_screen();
   change_cursor();
+
 }
 
 void now_screen(){
