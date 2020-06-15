@@ -114,7 +114,7 @@ class Block {
   {
     this.isCilcked = Cilcked;
   }
-  void setIocation(int[] location)
+  void setLocation(int[] location)
   {
     this.location = location;
   }
@@ -122,7 +122,7 @@ class Block {
   {
     return bflag;
   }
-  int[] getIocation()
+  int[] getLocation()
   {
     return location;
   }

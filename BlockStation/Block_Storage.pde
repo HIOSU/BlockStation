@@ -171,6 +171,7 @@ class Block_Storage {
     q = new int[][] {{0, 0, 0, 0, 0}, {0, 1, 1, 1, 0}, {0, 1, 1, 1, 0}, {0, 1, 1, 1, 0}, {0, 0, 0, 0, 0}};
     co = new int[] {153, 000, 151};
     mo = (Block[])append(mo, new Block( q, co, moi++));
+    ten = (Block[])append(ten, new Block( q, co, teni++));
   }
 
   Block[] get_mo() {

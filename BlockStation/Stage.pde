@@ -156,7 +156,7 @@ class Stage
     //  for (int b= 0; b < mobc1[i].length; b++)
     //    {
     //      xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
-    //      mobc1[i][b].setIocation(xy);
+    //      mobc1[i][b].setLocation(xy);
         
     //  }
     //}
@@ -225,13 +225,13 @@ class Stage
         //            {
         //if(mobc1[p][b].isCilcked == true)
         //{
-        //  //print(stage.getMobc1()[p][b].getIocation()[0] + "," +  stage.getMobc1()[p][b].getIocation()[1]);
-        //  draw_array(mobc1[p][b].getArray(), mobc1[p][b].getIocation()[0], mobc1[p][b].getIocation()[1], true, mobc1[p][b].getIndex());
+        //  //print(stage.getMobc1()[p][b].getLocation()[0] + "," +  stage.getMobc1()[p][b].getLocation()[1]);
+        //  draw_array(mobc1[p][b].getArray(), mobc1[p][b].getLocation()[0], mobc1[p][b].getLocation()[1], true, mobc1[p][b].getIndex());
         //}
         if (mobc1s[p][b/3][b%3] == 1 || mobc1[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc1[p][b].getArray(), mobc1[p][b].getIocation()[0], mobc1[p][b].getIocation()[1], true, mobc1[p][b].getIndex());
+          draw_array(mobc1[p][b].getArray(), mobc1[p][b].getLocation()[0], mobc1[p][b].getLocation()[1], true, mobc1[p][b].getIndex());
         }
         // }
         //}
@@ -284,7 +284,7 @@ class Stage
         if (mobc2s[p][b/3][b%3] == 1 || mobc2[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc2[p][b].getArray(), mobc2[p][b].getIocation()[0], mobc2[p][b].getIocation()[1], true, mobc2[p][b].getIndex());
+          draw_array(mobc2[p][b].getArray(), mobc2[p][b].getLocation()[0], mobc2[p][b].getLocation()[1], true, mobc2[p][b].getIndex());
         }
       }
     }
@@ -330,7 +330,7 @@ class Stage
         if (mobc3s[p][b/3][b%3] == 1 || mobc3[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc3[p][b].getArray(), mobc3[p][b].getIocation()[0], mobc3[p][b].getIocation()[1], true, mobc3[p][b].getIndex());
+          draw_array(mobc3[p][b].getArray(), mobc3[p][b].getLocation()[0], mobc3[p][b].getLocation()[1], true, mobc3[p][b].getIndex());
         }
       }
     }
@@ -388,7 +388,7 @@ class Stage
      if (mobc4s[p][b/3][b%3] == 1 || mobc4[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc4[p][b].getArray(), mobc4[p][b].getIocation()[0], mobc4[p][b].getIocation()[1], true, mobc4[p][b].getIndex());
+          draw_array(mobc4[p][b].getArray(), mobc4[p][b].getLocation()[0], mobc4[p][b].getLocation()[1], true, mobc4[p][b].getIndex());
         }
     }
 
@@ -447,7 +447,7 @@ class Stage
       if (mobc5s[p][b/3][b%3] == 1 || mobc5[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc5[p][b].getArray(), mobc5[p][b].getIocation()[0], mobc5[p][b].getIocation()[1], true, mobc5[p][b].getIndex());
+          draw_array(mobc5[p][b].getArray(), mobc5[p][b].getLocation()[0], mobc5[p][b].getLocation()[1], true, mobc5[p][b].getIndex());
         }
     }
 
@@ -529,7 +529,7 @@ class Stage
         for (int b= 0; b < block[i].length; b++)
         {
           xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
-          block[i][b].setIocation(xy);
+          block[i][b].setLocation(xy);
         
         }
       }

@@ -6,7 +6,7 @@ class Tentris {
   int deathCount = 0;
   Block nextBlock = null;
   //Item item = null;
-  int[][] a = {{0, 0}, {0, 0}, {0, 0}, {0, 0}};
+  int[] a = {0, 0, 0, 0};
   Block[] a1 = {null, null, null, null};
   int nowBlocks = 0;
   int[][] tentenArray = {
@@ -23,6 +23,7 @@ class Tentris {
   Block[] blocks;
   int q = 0;
 
+
   void setting() {
     blocks = b_s.get_ten();
   }
@@ -31,7 +32,7 @@ class Tentris {
   }
   void tentris_ui()
   {
-    if (deathCount <= 3) {
+    if (deathCount < 3) {
       if (millis() - time >= 1000) {
         time = millis();
         println(time);
@@ -66,8 +67,9 @@ class Tentris {
           time1 = millis();
           a1[q%4] = nextBlock;
           nextBlock = null;
-          a[q%4][0] = 1;
-          a[q%4][1] = -145;
+          a[q%4] = 1;
+          int[] location = {385, -145};
+          a1[q%4].setLocation(location);
           q++;
           nowBlocks++;
         }
@@ -83,14 +85,15 @@ class Tentris {
         //a[0][1] = -150;
         //nowBlocks++;}
         for (int i = 0; i<a.length; i++) {
-          if (a[i][0] == 1) {
-            draw_array(a1[i].getArray(), 385, a[i][1], true, a1[i].getIndex());
+          if (a[i] == 1) {
+            draw_array(a1[i].getArray(), 385, a1[i].getLocation()[1], true, a1[i].getIndex());
             //print(a[i][1]+ "->");
-            a[i][1] += 30;
-            if (a[i][1] + ((a1[i].blockArea[3]+1)*30) > 373) {
+            int[] location2 = {a1[i].getLocation()[0], a1[i].getLocation()[1]+30};
+            a1[i].setLocation(location2);
+            if (a1[i].getLocation()[1] + ((a1[i].blockArea[3]+1)*30) > 373) {
               score -= (20*a1[i].getBlockAmount());
-              a[i][0] = 0;
-              a[i][1] = -150;
+              a[i] = 0;
+              a1[i].getLocation()[1] = -150;
               deathCount++;
               a1[i] = null;
             }
@@ -146,12 +149,13 @@ class Tentris {
     }
   }
   void reset() {
-    if (maxscore < score){
-      maxscore = score;}
+    if (maxscore < score) {
+      maxscore = score;
+    }
     score = 0;
     nextBlock = null;
     deathCount = 0;
-    a = new int[][] {{0, 0}, {0, 0}, {0, 0}, {0, 0}};
+    a = new int[] {0, 0, 0, 0};
     a1 = new Block[] {null, null, null, null};
     nowBlocks = 0;
     tentenArray = new int[][] {
@@ -166,5 +170,20 @@ class Tentris {
       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
       {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};  
     q = 0;
+  }
+  void tenEventP() {
+    for (int i = 0; i < a1.length; i++) {
+      if (a1[i] != null) {
+        if ((mouseX  > 380 && mouseY > a1[i].getLocation()[1]) && (mouseX < 535 && mouseY < a1[i].getLocation()[1] + 155))
+        {
+          a1[i].setIsCilcked(true);
+          a[i] = 0;
+        }
+      }
+    }
+  }
+  void tenEventD() {
+  }
+  void tenEventR() {
   }
 }

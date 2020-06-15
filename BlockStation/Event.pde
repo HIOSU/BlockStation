@@ -297,7 +297,7 @@ void mouseReleased()
     //    else 
     //    {
     //      stage.xy = new int[] {155*(i%3), 110+(135*((int)(i/3)))};
-    //      stage.mobc1[p][i].setIocation(stage.xy);
+    //      stage.mobc1[p][i].setLocation(stage.xy);
     //      if (stage.getMobc1()[p][i].getBflag() == false)
     //      {
     //        stage.getMobc1s()[p][i/3][i%3] = 1;
@@ -313,6 +313,9 @@ void mouseReleased()
 
 void mousePressed()
 {
+  if(Screencount.equals("tentris")){
+    tentris.tenEventP();
+  }
   //if (mouseButton == LEFT)
   //{
   //  if (count < 3)
@@ -406,9 +409,9 @@ void mouseDragged()
   //  {
   //    int [] mxy = {(int)mouseX, (int)mouseY};
 
-  //    stage.getMobc1()[p][i].setIocation(mxy);
-  //    //print(stage.getMobc1()[p][i].getIocation()[0] + "," +  stage.getMobc1()[p][i].getIocation()[1]);
-  //   // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getIocation()[0], stage.getMobc1()[p][i].getIocation()[1], true, stage.getMobc1()[p][i].getIndex());
+  //    stage.getMobc1()[p][i].setLocation(mxy);
+  //    //print(stage.getMobc1()[p][i].getLocation()[0] + "," +  stage.getMobc1()[p][i].getLocation()[1]);
+  //   // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getLocation()[0], stage.getMobc1()[p][i].getLocation()[1], true, stage.getMobc1()[p][i].getIndex());
 
 
   //  }
@@ -450,9 +453,9 @@ void BlockD(Block [][] blocks)
     if (blocks[p][i].getIsCilcked() == true)
     {
       int [] mxy = {(int)mouseX, (int)mouseY};          
-      blocks[p][i].setIocation(mxy);
-      //print(stage.getMobc1()[p][i].getIocation()[0] + "," +  stage.getMobc1()[p][i].getIocation()[1]);
-      // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getIocation()[0], stage.getMobc1()[p][i].getIocation()[1], true, stage.getMobc1()[p][i].getIndex());
+      blocks[p][i].setLocation(mxy);
+      //print(stage.getMobc1()[p][i].getLocation()[0] + "," +  stage.getMobc1()[p][i].getLocation()[1]);
+      // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getLocation()[0], stage.getMobc1()[p][i].getLocation()[1], true, stage.getMobc1()[p][i].getIndex());
     }
   }
 }
@@ -485,7 +488,7 @@ void BlockR(Block [][] block, int [][][] blocks)
       else 
       {
         stage.xy = new int[] {155*(i%3), 110+(135*((int)(i/3)))};
-        block[p][i].setIocation(stage.xy);
+        block[p][i].setLocation(stage.xy);
         if (block[p][i].getBflag() == false)
         {
           blocks[p][i/3][i%3] = 1;
