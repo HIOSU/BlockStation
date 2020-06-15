@@ -2,31 +2,6 @@
 
 class Stage
 {
-  int[][][] mobc5s = new int[][][] {
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
-    };
-
-  int[][][] mobc1s;
-
-  int[][][] mobc2s = new int[][][] {
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 1}, {1, 1, 1}, {0, 0, }}, 
-    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
-    };
-
-  int[][][] mobc4s = new int[][][] {
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
-    };
-
-  int[][][] mobc3s = new int[][][] {
-    {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
-    {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 
-    {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
-    };
 
   int[][] moba1 =  {
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
@@ -93,24 +68,59 @@ class Stage
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
     };  
   Block[] mob;
-  int[] xy;
   Block [][] mobc1;                  
   Block [][] mobc2;
   Block [][] mobc3;
   Block [][] mobc4;
   Block [][] mobc5;
   
+  int[] xy;
+  
+  int[][][] mobc1s;
+
+  int[][][] mobc2s;
+
+  int[][][] mobc3s;
+
+  int[][][] mobc4s;
+
+  int[][][] mobc5s;
+  
 
   void stage()
   {
+    mob = b_s.get_mo();
+     
     mobc1s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {0, 0, 0}}, 
       {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
       };
+      
+    mobc5s = new int[][][] {
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
+      };
 
+    mobc2s = new int[][][] {
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 1}, {1, 1, 1}, {0, 0, }}, 
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+      };
 
-    mob = b_s.get_mo();
+    mobc4s = new int[][][] {
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
+      };
+
+    mobc3s = new int[][][] {
+      {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
+      {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 
+      {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
+      };
+
     //m = (int)random(mob.length);
     Block[][] tes5 =  {
       {mob[2].rot(2), mob[4].copyBlock(),mob[5].copyBlock(),mob[6].copyBlock(),mob[7].rot(2), mob[8].copyBlock(),mob[9].copyBlock(),mob[10].copyBlock(),mob[12].rot(1)}, 
@@ -225,13 +235,13 @@ class Stage
         //            {
         //if(mobc1[p][b].isCilcked == true)
         //{
-        //  //print(stage.getMobc1()[p][b].getIocation()[0] + "," +  stage.getMobc1()[p][b].getIocation()[1]);
-        //  draw_array(mobc1[p][b].getArray(), mobc1[p][b].getIocation()[0], mobc1[p][b].getIocation()[1], true, mobc1[p][b].getIndex());
+        //  //print(stage.getMobc1()[p][b].getLocation()[0] + "," +  stage.getMobc1()[p][b].getLocation()[1]);
+        //  draw_array(mobc1[p][b].getArray(), mobc1[p][b].getLocation()[0], mobc1[p][b].getLocation()[1], true, mobc1[p][b].getIndex());
         //}
         if (mobc1s[p][b/3][b%3] == 1 || mobc1[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc1[p][b].getArray(), mobc1[p][b].getIocation()[0], mobc1[p][b].getIocation()[1], true, mobc1[p][b].getIndex());
+          draw_array(mobc1[p][b].getArray(), mobc1[p][b].getLocation()[0], mobc1[p][b].getLocation()[1], true, mobc1[p][b].getIndex());
         }
         // }
         //}
@@ -284,7 +294,7 @@ class Stage
         if (mobc2s[p][b/3][b%3] == 1 || mobc2[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc2[p][b].getArray(), mobc2[p][b].getIocation()[0], mobc2[p][b].getIocation()[1], true, mobc2[p][b].getIndex());
+          draw_array(mobc2[p][b].getArray(), mobc2[p][b].getLocation()[0], mobc2[p][b].getLocation()[1], true, mobc2[p][b].getIndex());
         }
       }
     }
@@ -330,7 +340,7 @@ class Stage
         if (mobc3s[p][b/3][b%3] == 1 || mobc3[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc3[p][b].getArray(), mobc3[p][b].getIocation()[0], mobc3[p][b].getIocation()[1], true, mobc3[p][b].getIndex());
+          draw_array(mobc3[p][b].getArray(), mobc3[p][b].getLocation()[0], mobc3[p][b].getLocation()[1], true, mobc3[p][b].getIndex());
         }
       }
     }
@@ -388,7 +398,7 @@ class Stage
      if (mobc4s[p][b/3][b%3] == 1 || mobc4[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc4[p][b].getArray(), mobc4[p][b].getIocation()[0], mobc4[p][b].getIocation()[1], true, mobc4[p][b].getIndex());
+          draw_array(mobc4[p][b].getArray(), mobc4[p][b].getLocation()[0], mobc4[p][b].getLocation()[1], true, mobc4[p][b].getIndex());
         }
     }
 
@@ -447,7 +457,7 @@ class Stage
       if (mobc5s[p][b/3][b%3] == 1 || mobc5[p][b].isCilcked == true)
         {
           //print(mobc1s[p][x][c]);
-          draw_array(mobc5[p][b].getArray(), mobc5[p][b].getIocation()[0], mobc5[p][b].getIocation()[1], true, mobc5[p][b].getIndex());
+          draw_array(mobc5[p][b].getArray(), mobc5[p][b].getLocation()[0], mobc5[p][b].getLocation()[1], true, mobc5[p][b].getIndex());
         }
     }
 
@@ -529,7 +539,7 @@ class Stage
         for (int b= 0; b < block[i].length; b++)
         {
           xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
-          block[i][b].setIocation(xy);
+          block[i][b].setLocation(xy);
         
         }
       }

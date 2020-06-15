@@ -1,6 +1,8 @@
 void change_cursor(){
   double mx = mouseX;
   double my = mouseY;
+  if(CheckM == false)
+  {
     if( (mx > 400 && my > 300) && (mx < 600 && my < 340)&& Screencount.equals("main"))
     {
       cursor(HAND);
@@ -113,4 +115,5 @@ void change_cursor(){
     {
       cursor(ARROW);
     }
+  }
 }

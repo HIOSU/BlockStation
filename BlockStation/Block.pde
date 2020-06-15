@@ -77,7 +77,7 @@ class Block {
                       {0, 0, 0, 0, 0}, 
                       {0, 0, 0, 0, 0}, 
                       {0, 0, 0, 0, 0}};
-;
+
     arrayCopy(this.array,barray);
     
     for (int a =0; a < num; a++)
@@ -90,8 +90,6 @@ class Block {
 
       for (int i = 0; i <= barray.length-1; i++) {
         for (int j = 0; j <= barray.length-1; j++) {
-          println(barray.length-1-i);
-          println("----------------------------");
           new_array[i][j] = barray[j][barray.length-1-i];
         }
       }
@@ -114,7 +112,7 @@ class Block {
   {
     this.isCilcked = Cilcked;
   }
-  void setIocation(int[] location)
+  void setLocation(int[] location)
   {
     this.location = location;
   }
@@ -122,7 +120,7 @@ class Block {
   {
     return bflag;
   }
-  int[] getIocation()
+  int[] getLocation()
   {
     return location;
   }
