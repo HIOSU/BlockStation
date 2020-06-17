@@ -38,58 +38,57 @@ boolean StartmouseXY = false;
 boolean ExitmouseXY = false;
 boolean CheckM = false;
 
-void settings(){
-  size(sizeX,sizeY);
-//  fullScreen();
+void settings() {
+  size(sizeX, sizeY);
+  //  fullScreen();
 }
 
 void setup()
 {
 
-  
-   b_s.storage();
-   stage.stage();
-   tentris.setting();
-   noStroke();
+
+  b_s.storage();
+  stage.stage();
+  tentris.setting();
+  noStroke();
 }
 void draw()
 {
   now_screen();
   change_cursor();
-
 }
 
-void now_screen(){
-  if (Screencount.equals("main")){
+void now_screen() {
+  if (Screencount.equals("main")) {
     screen.Gamemain();
-  }else if(Screencount.equals("select") && helpcount == 0){
+  } else if (Screencount.equals("select") && helpcount == 0) {
     screen.Gameselection();
-  }else if(Screencount.equals("select") && helpcount == 1){
+  } else if (Screencount.equals("select") && helpcount == 1) {
     screen.Gameselection();
-    rect(350,100,300,300);
-  }else if(Screencount.equals("select") && helpcount == 2){
+    rect(350, 100, 300, 300);
+  } else if (Screencount.equals("select") && helpcount == 2) {
     screen.Gameselection();
-    rect(350,100,300,300);
-  }else if(Screencount.equals("select") && helpcount == 3){
+    rect(350, 100, 300, 300);
+  } else if (Screencount.equals("select") && helpcount == 3) {
     screen.Gameselection();
-    rect(350,100,300,300);
-  }else if(Screencount.equals("stage")){
+    rect(350, 100, 300, 300);
+  } else if (Screencount.equals("stage")) {
     stage.Mstage();
-  }else if(Screencount.equals("stage1")){
+  } else if (Screencount.equals("stage1")) {
     stage.Chapter1();
-  }else if(Screencount.equals("stage2")){
+  } else if (Screencount.equals("stage2")) {
     stage.Chapter2();
-  }else if(Screencount.equals("stage3")){
+  } else if (Screencount.equals("stage3")) {
     stage.Chapter3();
-  }else if(Screencount.equals("stage4")){
+  } else if (Screencount.equals("stage4")) {
     stage.Chapter4();
-  }else if(Screencount.equals("stage5")){
+  } else if (Screencount.equals("stage5")) {
     stage.Chapter5();
-  }else if(Screencount.equals("tentris")){
+  } else if (Screencount.equals("tentris")) {
     tentris.run_tentris();
+  } else if (Screencount.equals("tetris")) {
+    tetris.run_tetris();
+  } else if (Screencount.equals("tetris")) {
+    tetris.tet_block();
   }
-  //}else if(Screencount.equals("tetris")){
-  //  tetris.run_tetris();
-  //}
-  
 }
