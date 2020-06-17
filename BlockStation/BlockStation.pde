@@ -1,7 +1,7 @@
 Event  event;
 Stage stage = new Stage();
 Screen screen = new Screen();
-Tetris tetris = new Tetris();
+//Tetris tetris = new Tetris();
 Tentris tentris = new Tentris();
 Block_Storage b_s = new Block_Storage();
 
@@ -87,8 +87,9 @@ void now_screen(){
     stage.Chapter5();
   }else if(Screencount.equals("tentris")){
     tentris.run_tentris();
-  }else if(Screencount.equals("tetris")){
-    tetris.run_tetris();
   }
+  //}else if(Screencount.equals("tetris")){
+  //  tetris.run_tetris();
+  //}
   
 }

@@ -344,7 +344,7 @@ void mousePressed()
 
   if (p < 2 && mouseButton == LEFT && (Screencount.equals("stage1")))
   {
-    noCursor();
+//    noCursor();
     
     //if ( p < 2 )
     //{
@@ -477,7 +477,7 @@ void BlockP(Block [][] block, int [][][] blocks)
           block[p][i].setIsCilcked(true);
           blocks[p][i/3][i%3] = 0;
           CheckM = true;
-          noCursor();
+//          noCursor();
         }
       }
     }
@@ -489,7 +489,49 @@ void BlockR(Block [][] block, int [][][] blocks)
   {
     if (block[p][i].getIsCilcked() == true)
     {
-      if (mouseX > 700)// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
+      if ((((700 - (block[p][i].getBlockArea()[0]*30)) <= mouseX) && ((1145 - (block[p][i].getBlockArea()[2]*30)) >= mouseX) && ((250 - (block[p][i].getBlockArea()[1]*30)) <= mouseY ) && ((395 - ((block[p][i].getBlockArea()[3]*30))) >= mouseY)) && (Screencount.equals("stage1")))// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
+      {
+          test(block,stage.moba1);
+      }
+      else if ((((650 - (block[p][i].getBlockArea()[0]*30)) <= mouseX) && ((795 - (block[p][i].getBlockArea()[2]*30)) >= mouseX) && ((150 - (block[p][i].getBlockArea()[1]*30)) <= mouseY ) && ((295 - ((block[p][i].getBlockArea()[3]*30))) >= mouseY)) && (Screencount.equals("stage2")) || ((650 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((945 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((300 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((445 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY))// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
+      {
+        //print(((700 - (block[p][i].getBlockArea()[0]))));
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      //else if (((650 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((945 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((300 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((445 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage2")))
+      //{
+      //  block[p][i].setBflag(true);
+      //  CheckM = false;
+      //}
+      //draw_array(moba3, 700, 150, false, -1);
+      else if (((815 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((930 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((150 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((265 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage3")))
+      {
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      else if (((700 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((1035 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((270 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((385 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage3")))
+      {
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      else if (((815 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((930 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((390 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((505 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage3")))
+      {
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      //draw_array(moba4, 700, 150, false, -1);
+      else if (((700 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((815 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((150 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((445 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage4")))
+      {
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      else if (((820 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((935 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((300 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((445 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage4")))
+      {
+        block[p][i].setBflag(true);
+        CheckM = false;
+      }
+      else if (((940 - (block[p][i].getBlockArea()[0]*30)-5) <= mouseX) && ((1055 - (block[p][i].getBlockArea()[2]*30)-5) >= mouseX) && ((150 - (block[p][i].getBlockArea()[1]*30)-5) <= mouseY ) && ((445 - ((block[p][i].getBlockArea()[3]*30)-5)) >= mouseY) && (Screencount.equals("stage4")))
       {
         block[p][i].setBflag(true);
         CheckM = false;
@@ -508,3 +550,69 @@ void BlockR(Block [][] block, int [][][] blocks)
     }
   }
 }
+void test(Block[][] block , int[][] r)
+{
+    int[][] newArray = {};
+
+        for (int i = 0; i < block[p][i].getBlockArea()[1]; i++) 
+        {
+          int[] qw = {};
+          for (int j = 0; j < r[0].length + block[p][i].getBlockArea()[0]; j++) {
+            qw = (int[])append(qw, 0);
+          }
+          newArray = (int[][])append(newArray, qw);
+        }
+
+        for (int i = 0; i< r.length; i++) {
+          int[] foo = {};
+          for (int j = 0; j< block[p][i].getBlockArea()[0]; j++) {
+            foo = (int[])append(foo, 0);
+          }
+          for (int z = 0; z< r[i].length; z++) {
+            foo = (int[]) append(foo, r[i][z]);
+          }
+          newArray = (int[][])append(newArray, foo);
+          block[p][i].setBflag(true);
+          CheckM = false;
+          
+          
+          //for (int z = 0; z< block[p].length; z++) {
+//            print(newArray[i][z]);
+//            print(block[p][z]);
+            //if (newArray[i][z] + block[p][i] == 1)
+            //{
+              
+            //}
+        //  }
+        //}
+        //for (int i =0; i < newArray.length; i++)
+        //{
+        //  for (int j =0; j < newArray[i].length; j++)
+        //  {
+        //    print(newArray[i][j]);
+        //  }
+        //  println("");
+        //}
+} //<>//
+  }
+ 
+
+  //for (int i = 0; i < r.length; i++)
+  //{
+  //  for (int j = 0; j < r[i].length; j++) 
+  //  {
+  //    if(r[i][j] == 0)
+  //    {
+          //block[p][i].setBflag(true);
+          //CheckM = false;
+      //}
+    // }
+  //}
+   
+  
+//if ((((700 - (block[p][i].getBlockArea()[0]*30)) <= mouseX) && ((1145 - (block[p][i].getBlockArea()[2]*30)) >= mouseX) && ((250 - (block[p][i].getBlockArea()[1]*30)) <= mouseY ) && ((395 - ((block[p][i].getBlockArea()[3]*30))) >= mouseY)) && (Screencount.equals("stage1")))// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
+//      {
+//        //print(((700 - (block[p][i].getBlockArea()[0]))));
+//        block[p][i].setBflag(true);
+//        CheckM = false;
+//      }
