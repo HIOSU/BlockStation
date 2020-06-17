@@ -1,4 +1,5 @@
-void change_cursor(){
+void change_cursor()
+{
   double mx = mouseX;
   double my = mouseY;
   if(CheckM == false)
