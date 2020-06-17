@@ -74,7 +74,7 @@ class Stage
   Block [][] mobc4;
   Block [][] mobc5;
   
-  int[] xy;
+  float[] xy;
   
   int[][][] mobc1s;
 
@@ -504,7 +504,7 @@ class Stage
     //}
     draw_array(moba5, 800, 150, false, -1);
   }
-  void draw_array(int[][] array, int x, int y, boolean isBlock, int index) {
+  void draw_array(int[][] array, float x, float y, boolean isBlock, int index) {
     noStroke();
     for (int i = 0; i<array.length; i++) {
       for (int j = 0; j<array[i].length; j++) {
@@ -538,7 +538,7 @@ class Stage
     
         for (int b= 0; b < block[i].length; b++)
         {
-          xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
+          xy = new float[] {155*(b%3), 110+(135*((float)(b/3)))};
           block[i][b].setLocation(xy);
         
         }

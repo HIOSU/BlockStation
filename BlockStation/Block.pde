@@ -3,7 +3,7 @@ class Block {
   int blockAmount = 0;
 
   int[] rgb;
-  int[] location = {0,0};
+  float[] location = {0,0};
 
   int[] blockArea = {5, 5, 0, 0}; // first x, first y, last x, last y
 
@@ -112,7 +112,7 @@ class Block {
   {
     this.isCilcked = Cilcked;
   }
-  void setLocation(int[] location)
+  void setLocation(float[] location)
   {
     this.location = location;
   }
@@ -120,7 +120,7 @@ class Block {
   {
     return bflag;
   }
-  int[] getLocation()
+  float[] getLocation()
   {
     return location;
   }

@@ -269,6 +269,9 @@ void mouseReleased()
   }  else if ((mx > 645 && my > 370) && (mx < 695 & my < 420) && Screencount.equals("tentris")){ // re
     tentris.reset();
   }
+  if (Screencount.equals("tentris")){
+    tentris.tenEventR();
+  }
   if ( p < 2 && Screencount.equals("stage1"))
   {
     BlockR(stage.mobc1, stage.mobc1s);
@@ -389,6 +392,9 @@ void mousePressed()
 }
 void mouseDragged()
 {
+  if (Screencount.equals("tentris")){
+    tentris.tenEventD();
+  }
   if ( p < 2 && (Screencount.equals("stage1")))
   {
     
@@ -459,7 +465,7 @@ void BlockD(Block [][] blocks)
   {
     if (blocks[p][i].getIsCilcked() == true)
     {
-      int [] mxy = {(int)mouseX, (int)mouseY};          
+      float [] mxy = {(float)mouseX, (float)mouseY};          
       blocks[p][i].setLocation(mxy);
       //print(stage.getMobc1()[p][i].getLocation()[0] + "," +  stage.getMobc1()[p][i].getLocation()[1]);
       // stage.draw_array(stage.getMobc1()[p][i].getArray(),stage.getMobc1()[p][i].getLocation()[0], stage.getMobc1()[p][i].getLocation()[1], true, stage.getMobc1()[p][i].getIndex());
@@ -496,7 +502,7 @@ void BlockR(Block [][] block, int [][][] blocks)
       }
       else 
       {
-        stage.xy = new int[] {155*(i%3), 110+(135*((int)(i/3)))};
+        stage.xy = new float[] {155*(i%3), 110+(135*((i/3)))};
         block[p][i].setLocation(stage.xy);
         if (block[p][i].getBflag() == false)
         {
