@@ -9,7 +9,7 @@ class Stage
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };
+  };
 
 
 
@@ -24,7 +24,7 @@ class Stage
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };  
+  };  
 
   int[][] moba3 = {
     {-1, -1, -1, -1, 0, 0, 0, 0, -1, -1, -1, -1}, 
@@ -39,7 +39,7 @@ class Stage
     {-1, -1, -1, -1, 0, 0, 0, 0, -1, -1, -1, -1}, 
     {-1, -1, -1, -1, 0, 0, 0, 0, -1, -1, -1, -1}, 
     {-1, -1, -1, -1, 0, 0, 0, 0, -1, -1, -1, -1}
-    };      
+  };      
 
   int[][] moba4 = {
     {0, 0, 0, 0, -1, -1, -1, -1, 0, 0, 0, 0}, 
@@ -52,7 +52,7 @@ class Stage
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };                                     
+  };                                     
 
 
   int[][] moba5 =  {
@@ -66,16 +66,16 @@ class Stage
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
-    };  
+  };  
   Block[] mob;
   Block [][] mobc1;                  
   Block [][] mobc2;
   Block [][] mobc3;
   Block [][] mobc4;
   Block [][] mobc5;
-  
+
   int[] xy;
-  
+
   int[][][] mobc1s;
 
   int[][][] mobc2s;
@@ -85,89 +85,89 @@ class Stage
   int[][][] mobc4s;
 
   int[][][] mobc5s;
-  
+
 
   void stage()
   {
     mob = b_s.get_mo();
-     
+
     mobc1s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {0, 0, 0}}, 
       {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
-      };
-      
+    };
+
     mobc5s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
-      };
+    };
 
     mobc2s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {0, 0, }}, 
       {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
-      };
+    };
 
     mobc4s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 0}, {0, 0, 0}, {0, 0, 0}}
-      };
+    };
 
     mobc3s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 
       {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
-      };
+    };
 
     //m = (int)random(mob.length);
     Block[][] tes5 =  {
-      {mob[2].rot(2), mob[4].copyBlock(),mob[5].copyBlock(),mob[6].copyBlock(),mob[7].rot(2), mob[8].copyBlock(),mob[9].copyBlock(),mob[10].copyBlock(),mob[12].rot(1)}, 
-      {mob[13].rot(3), mob[15].rot(2), mob[16].rot(2), mob[18].rot(1), mob[19].copyBlock(),mob[20].rot(2), mob[21].rot(3), mob[23].rot(1), mob[24]}, 
+      {mob[2].rot(2), mob[4].copyBlock(), mob[5].copyBlock(), mob[6].copyBlock(), mob[7].rot(2), mob[8].copyBlock(), mob[9].copyBlock(), mob[10].copyBlock(), mob[12].rot(1)}, 
+      {mob[13].rot(3), mob[15].rot(2), mob[16].rot(2), mob[18].rot(1), mob[19].copyBlock(), mob[20].rot(2), mob[21].rot(3), mob[23].rot(1), mob[24]}, 
       {mob[26].rot(3), mob[27].copyBlock()}
-      };
+    };
 
     mobc5 = tes5;
 
     Block[][] tes1 = {
-      {mob[2].rot(2), mob[3].rot(3), mob[5].copyBlock(),mob[6].copyBlock(),mob[8].copyBlock(),mob[11].rot(1), mob[12].copyBlock(),mob[13].rot(2), mob[14].rot(2)}, 
-      {mob[17].copyBlock(),mob[18].rot(1), mob[19].rot(1), mob[20].copyBlock(),mob[22].copyBlock(),mob[27].copyBlock()}
-      };
+      {mob[2].rot(2), mob[3].rot(3), mob[5].copyBlock(), mob[6].copyBlock(), mob[8].copyBlock(), mob[11].rot(1), mob[12].copyBlock(), mob[13].rot(2), mob[14].rot(2)}, 
+      {mob[17].copyBlock(), mob[18].rot(1), mob[19].rot(1), mob[20].copyBlock(), mob[22].copyBlock(), mob[27].copyBlock()}
+    };
 
     mobc1 = tes1;
 
 
 
     Block[][] tes2 = {
-      {mob[2].copyBlock(),mob[3].copyBlock(),mob[4].rot(1), mob[5].copyBlock(),mob[8].copyBlock(),mob[9].rot(3), mob[10].copyBlock(),mob[11].copyBlock(),mob[12].rot(2)}, 
-      {mob[13].rot(3), mob[18].copyBlock(),mob[19].rot(1), mob[23].rot(3), mob[24].rot(3), mob[27].copyBlock()}
-      };
+      {mob[2].copyBlock(), mob[3].copyBlock(), mob[4].rot(1), mob[5].copyBlock(), mob[8].copyBlock(), mob[9].rot(3), mob[10].copyBlock(), mob[11].copyBlock(), mob[12].rot(2)}, 
+      {mob[13].rot(3), mob[18].copyBlock(), mob[19].rot(1), mob[23].rot(3), mob[24].rot(3), mob[27].copyBlock()}
+    };
 
     mobc2 = tes2;    
 
     Block[][] tes4 = {
-      {mob[2].copyBlock(),mob[3].copyBlock(),mob[5].copyBlock(),mob[6].copyBlock(),mob[8].rot(1), mob[9].copyBlock(),mob[11].copyBlock(),mob[12].copyBlock(),mob[13].rot(2)}, 
-      {mob[14].rot(2), mob[16].copyBlock(),mob[17].copyBlock(),mob[18].rot(2), mob[19].rot(1), mob[21].copyBlock(),mob[22].copyBlock(),mob[23].rot(1), mob[24].rot(3)}, 
+      {mob[2].copyBlock(), mob[3].copyBlock(), mob[5].copyBlock(), mob[6].copyBlock(), mob[8].rot(1), mob[9].copyBlock(), mob[11].copyBlock(), mob[12].copyBlock(), mob[13].rot(2)}, 
+      {mob[14].rot(2), mob[16].copyBlock(), mob[17].copyBlock(), mob[18].rot(2), mob[19].rot(1), mob[21].copyBlock(), mob[22].copyBlock(), mob[23].rot(1), mob[24].rot(3)}, 
       {mob[26].rot(1), mob[27].copyBlock()}
-      };
+    };
 
     mobc4 = tes4;
 
     Block[][] tes3 = {
-      {mob[1].copyBlock(),mob[2].rot(3), mob[3].copyBlock(),mob[7].rot(2), mob[8].rot(1), mob[9].copyBlock(),mob[11].rot(2), mob[13].rot(1), mob[15].rot(3)}, 
-      {mob[18].rot(2), mob[20].copyBlock(),mob[21].copyBlock(),mob[22].rot(2), mob[23].rot(1), mob[26].copyBlock(),mob[27].copyBlock()}
-      };
+      {mob[1].copyBlock(), mob[2].rot(3), mob[3].copyBlock(), mob[7].rot(2), mob[8].rot(1), mob[9].copyBlock(), mob[11].rot(2), mob[13].rot(1), mob[15].rot(3)}, 
+      {mob[18].rot(2), mob[20].copyBlock(), mob[21].copyBlock(), mob[22].rot(2), mob[23].rot(1), mob[26].copyBlock(), mob[27].copyBlock()}
+    };
 
     mobc3 = tes3;
     //for (int i = 0; i < mobc1.length; i++)
     //{
-    
+
     //  for (int b= 0; b < mobc1[i].length; b++)
     //    {
     //      xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
     //      mobc1[i][b].setLocation(xy);
-        
+
     //  }
     //}
     BlockXY(mobc1);
@@ -175,9 +175,9 @@ class Stage
     BlockXY(mobc3);
     BlockXY(mobc4);
     BlockXY(mobc5);
-    
 
-    
+
+
     //for (int[] i : mob[m].getArray())
     //{
     //  for (int j : i)
@@ -225,7 +225,7 @@ class Stage
     {
       for (int b= 0; b < mobc1[p].length; b++)
       {
-        
+
 
         //for (int z =0; z < mobc1s.length; z++)
         //{
@@ -395,11 +395,11 @@ class Stage
     rect (10, (150*3)+110, 20, 20);
     for (int b= 0; b < mobc4[p].length; b++)
     {
-     if (mobc4s[p][b/3][b%3] == 1 || mobc4[p][b].isCilcked == true)
-        {
-          //print(mobc1s[p][x][c]);
-          draw_array(mobc4[p][b].getArray(), mobc4[p][b].getLocation()[0], mobc4[p][b].getLocation()[1], true, mobc4[p][b].getIndex());
-        }
+      if (mobc4s[p][b/3][b%3] == 1 || mobc4[p][b].isCilcked == true)
+      {
+        //print(mobc1s[p][x][c]);
+        draw_array(mobc4[p][b].getArray(), mobc4[p][b].getLocation()[0], mobc4[p][b].getLocation()[1], true, mobc4[p][b].getIndex());
+      }
     }
 
     stx = 500;
@@ -455,10 +455,10 @@ class Stage
     for (int b= 0; b < mobc5[p].length; b++)
     {
       if (mobc5s[p][b/3][b%3] == 1 || mobc5[p][b].isCilcked == true)
-        {
-          //print(mobc1s[p][x][c]);
-          draw_array(mobc5[p][b].getArray(), mobc5[p][b].getLocation()[0], mobc5[p][b].getLocation()[1], true, mobc5[p][b].getIndex());
-        }
+      {
+        //print(mobc1s[p][x][c]);
+        draw_array(mobc5[p][b].getArray(), mobc5[p][b].getLocation()[0], mobc5[p][b].getLocation()[1], true, mobc5[p][b].getIndex());
+      }
     }
 
 
@@ -532,18 +532,17 @@ class Stage
     }
   }
   void BlockXY(Block[][] block)
+  {
+    for (int i = 0; i < block.length; i++)
     {
-      for (int i = 0; i < block.length; i++)
+
+      for (int b= 0; b < block[i].length; b++)
       {
-    
-        for (int b= 0; b < block[i].length; b++)
-        {
-          xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
-          block[i][b].setLocation(xy);
-        
-        }
+        xy = new int[] {155*(b%3), 110+(135*((int)(b/3)))};
+        block[i][b].setLocation(xy);
       }
     }
+  }
   public int[][][] getMobc5s() 
   {
     return mobc5s;
@@ -602,7 +601,7 @@ class Stage
   {
     return moba3;
   }
-  
+
   public void setMoba3(int[][] moba3) 
   {
     this.moba3 = moba3;
@@ -662,7 +661,6 @@ class Stage
   public void setMobc4(Block[][] mobc4) 
   {
     this.mobc4 = mobc4;
-    
   }
   public Block[][] getMobc5()
   {
