@@ -43,19 +43,20 @@ class Tentris {
     blocks = b_s.get_ten();
   }
   void run_tentris() {
-    tentris_ui();
+    tentris();
   }
-  void tentris_ui()
+  void tentris()
   {
     if (deathCount < 3) {
-
       background(#CBCBCB);
       image(loadImage("re.png"), 645, 370, 50, 50);
       image(iback, 0, 380, 50, 50);
       fill(0);
+
       for (int i = 3; i>deathCount; i--) {
         image(loadImage("he.png"), 290 - (i * 50), 370, 50, 50);
       }
+
       text("MaxScore. "+maxscore, 70, 30);
       text("Score. "+score, 70, 60);
       fill(255);
@@ -66,59 +67,33 @@ class Tentris {
       stroke(255, 255, 000);
       strokeWeight(9);
       line(385, 373, 530, 373);
+
       if (nextBlock == null) {
         int m = (int)random(1, blocks.length);
         int rot_num = (int)random(3);
-        //int m = 6;
-        //int rot_num = 0;
         nextBlock = blocks[m].rot(rot_num);
-        //nextBlock = blocks[m];
       }
+
       draw_array(tentenArray, 70, 65, false, -1);
+
       for (int i = 0; i<a.length; i++) {
         if (a1[i] != null) {
           draw_array(a1[i].getArray(), 385, a1[i].getLocation()[1], true, a1[i].getIndex());
         }
       }
+
       if (nextBlock !=null) {
         draw_array(nextBlock.getArray(), 545, 10, true, nextBlock.getIndex());
       }
+
       if (nowBlock != null) {
         draw_array(nowBlock.getArray(), nowBlock.getLocation()[0], nowBlock.getLocation()[1], true, nowBlock.getIndex());
       } 
 
-      if (millis() - time >= 500) {
+      if (millis() - time >= 750) {
         time = millis();
-        //println(time);
-        //background(#CBCBCB);
-        //image(loadImage("re.png"), 645, 370, 50, 50);
-        //image(iback, 0, 380, 50, 50);
-        //fill(0);
-        //for (int i = 3; i>deathCount; i--) {
-        //  image(loadImage("he.png"), 290 - (i * 50), 370, 50, 50);
-        //}
-        //text("MaxScore. "+maxscore, 70, 30);
-        //text("Score. "+score, 70, 60);
-        //fill(255);
-        //stroke(0);
-        //strokeWeight(1);
-        //rect(540, 5, 155, 155, 25);
-        //rect(540, 180, 90, 90, 25);
 
-        //stroke(255, 255, 000);
-        //strokeWeight(9);
-        //line(385, 373, 530, 373);
-        //if (nextBlock == null) {
-        //  int m = (int)random(1, blocks.length);
-        //  int rot_num = (int)random(3);
-        //  //int rot_num = 3;
-        //  nextBlock = blocks[m].rot(rot_num);
-        //  //nextBlock = blocks[m];
-        //}
-        //draw_array(nextBlock.getArray(), 545, 10, true, nextBlock.getIndex());
-
-        //if (nowBlocks<4){
-        if (millis() - time1 >= 3000) {
+        if (millis() - time1 >= 4500) {
           time1 = millis();
           a1[q%4] = nextBlock;
           nextBlock = null;
@@ -128,17 +103,7 @@ class Tentris {
           q++;
           nowBlocks++;
         }
-        //} else {
-        //  if (nowBlocks == 0) {
-        //    a1[0] = nextBlock;
-        //    nextBlock = null;
-        //    a[0][0] = 1;
-        //    a[0][1] = -150;
-        //    nowBlocks++;
-        //  }
-        //}
-        //a[0][1] = -150;
-        //nowBlocks++;}
+
         for (int i = 0; i<a.length; i++) {
           if (a[i] == 1) {
             //draw_array(a1[i].getArray(), 385, a1[i].getLocation()[1], true, a1[i].getIndex());
@@ -156,22 +121,6 @@ class Tentris {
             }
           }
         }
-
-
-        //}else if (nowBlocks < 4 && a[0][0] == 1){
-        //  draw_array(nextBlock.getArray(),385,-150,true,nextBlock.getIndex());
-        //  a[0][1] += 30;
-        //}
-
-        //draw_array(tentenArray, 70, 65, false, -1);
-        //for (int i = 0; i<10; i++){
-        //  for(int j = 0; j<10; j++){
-        //    rect(tenx + 5, teny, 25, 25, 10);
-        //    tenx = tenx + 30;
-        //    }
-        //   tenx = 10;
-        //   teny = teny + 30;
-        //}
       }
     } else {
       background(#CBCBCB);
@@ -205,6 +154,7 @@ class Tentris {
       }
     }
   }
+
   void reset() {
     if (maxscore < score) {
       maxscore = score;
@@ -236,6 +186,7 @@ class Tentris {
 
     a1 = new Block[] {null, null, null, null};
   }
+
   void tenEventP() {
     for (int i = 0; i < a1.length; i++) {
       if (a1[i] != null) {
@@ -247,7 +198,7 @@ class Tentris {
           a[i] = 0;
           a1[i] = null;
           CheckM = true;
-          //noCursor();
+          noCursor();
         }
       }
     }
@@ -260,11 +211,11 @@ class Tentris {
       //noCursor();
     }
   }
+
   void tenEventR() {
     if (nowBlock != null) {
       if (((70-(nowBlock.getBlockArea()[0]*30))<= mouseX) && ((365 - (nowBlock.getBlockArea()[2]*30)) >= mouseX) && ((65-(nowBlock.getBlockArea()[1]*30))<= mouseY) && ((360-(nowBlock.getBlockArea()[3]*30))>= mouseY)) {
-        //for (int i = nowBlock.getBlockArea()[1]; i<nowBlock.getBlockArea()[3]; i++) {
-        //for (int j = nowBlock.getBlockArea()[0]; j<nowBlock.getBlockArea()[2]; j++) {
+
         int[][] newArray = {};
 
         for (int i = 0; i < nowBlock.getBlockArea()[1]; i++) 
@@ -278,17 +229,22 @@ class Tentris {
 
         for (int i = 0; i< tentenArray.length; i++) {
           int[] foo = {};
+          
           for (int j = 0; j< nowBlock.getBlockArea()[0]; j++) {
             foo = (int[])append(foo, 0);
           }
+          
           for (int j = 0; j< tentenArray[i].length; j++) {
             foo = (int[]) append(foo, tentenArray[i][j]);
           }
+          
           for (int j = 0; j< (4-nowBlock.getBlockArea()[2]); j++) {
             foo = (int[])append(foo, 0);
           }
+          
           newArray = (int[][])append(newArray, foo);
         }
+        
         for (int i = 0; i < 4-nowBlock.getBlockArea()[3]; i++) 
         {
           int[] qw = {};
@@ -298,23 +254,12 @@ class Tentris {
           newArray = (int[][])append(newArray, qw);
         }
 
-        //for (int[] i : newArray) {
-        //  for (int j : i) {
-        //    print(j);
-        //  }
-        //  println("");
-        //}
-        //println("----------------");
-
-        //print("a");
         for (int i = 0; i<newArray.length; i++) {
           for (int j = 0; j<newArray[i].length; j++) {
             if (((70-(nowBlock.getBlockArea()[0]*30))+(30*j) <= mouseX) && ((65-(nowBlock.getBlockArea()[1]*30))+(30*i) <= mouseY) && ((97.5-(nowBlock.getBlockArea()[0]*30)+(30*j) >= mouseX) && ((92.5-(nowBlock.getBlockArea()[1]*30))+(30*i) >= mouseY))) {
               flag = 0;
-              //print("a");
               for (int z = 0; z<5; z++) {
                 for (int s = 0; s<5; s++) {
-                  //println("i = "+i+"j = "+ j+ "z = "+z+"s"+s);
                   if (newArray[z+i][s+j] != 0 && nowBlock.getArray()[z][s] != 0) {
                     flag = 1;
                     break;
@@ -329,16 +274,7 @@ class Tentris {
                 for (int z = 0; z<5; z++) {
                   for (int s = 0; s<5; s++) {
                     if (nowBlock.getArray()[z][s] == 1) {
-                      //for (int[] m : nowBlock.getArray()) {
-                      //  for (int n : m) {
-                      //    print(n);
-                      //  }
-                      //  println("");
-                      //}
-                      //println("z"+z+"i"+i+"s"+s+"j"+j);
-                      //println(newArray[z+i][s+j]);
                       newArray[z+i][s+j] = nowBlock.getArray()[z][s]*nowBlock.getIndex();
-                      //println(newArray[z+i][s+j]);
                     }
                   }
                 }
@@ -347,25 +283,12 @@ class Tentris {
           }
         }
         if (flag == 0) {
-          //for (int[] i : newArray) {
-          //  for (int j : i) {
-          //    print(j);
-          //  }
-          //  println("");
-          //}
-          //println("----------------------");
           for (int i = 0; i < tentenArray.length; i++) {
             for (int j = 0; j< tentenArray[i].length; j++) {
               tentenArray[i][j] = newArray[i+nowBlock.getBlockArea()[1]][j+nowBlock.getBlockArea()[0]];
             }
           }
           checkBreak();
-          //for (int[] i : tentenArray) {
-          //  for (int j : i) {
-          //    print(j);
-          //  }
-          //  println("");
-          //}
           score += nowBlock.getBlockAmount();
           nowBlock = null;
           deathCount = 0;
@@ -382,9 +305,6 @@ class Tentris {
             nowBlock = null;
           }
         }
-
-        //  }
-        //}
       } else {
         if (nowBlockLocY > 373) {
           score -= (20*nowBlock.getBlockAmount());
@@ -402,6 +322,7 @@ class Tentris {
 
     cursor(ARROW);
   }
+
   void checkBreak() {
     for (int i = 0; i < tentenArray.length; i++) {
       for (int j = 0; j< tentenArray[i].length; j++) {

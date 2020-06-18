@@ -85,7 +85,7 @@ class Tetris {
         b1[w%4] = drop_bk;
         next_bk = null;
         b[w%4] = 1;
-        int[] location = {385, -145};
+        //int[] location = {385, -145};
         //b1[w%4].setLocation(location);
         w++;
         now_bk++;
