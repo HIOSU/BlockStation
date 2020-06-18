@@ -31,7 +31,7 @@ void setup()
 {
   b_s.storage();
   stage.stage();
-  tet_block();
+  tetris.tet_block();
   noStroke();
 }
 
