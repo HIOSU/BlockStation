@@ -538,13 +538,10 @@ class Stage
 
       for (int b= 0; b < block[i].length; b++)
       {
-    
-        for (int b= 0; b < block[i].length; b++)
-        {
           xy = new float[] {155*(b%3), 110+(135*((float)(b/3)))};
           block[i][b].setLocation(xy);
         
-        }
+        
       }
     }
   }

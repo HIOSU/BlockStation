@@ -246,7 +246,7 @@ void mouseReleased()
   {
     BlockR(stage.mobc5, stage.mobc5s);
   } else if (Screencount.equals("tetris")) {
-    tetris.tet_block();
+    //tetris.tet_block();
   }
 
   //for (int i= 0; i < stage.getMobc1()[p].length; i++)

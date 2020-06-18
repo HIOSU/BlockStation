@@ -86,7 +86,7 @@ class Tetris {
         next_bk = null;
         b[w%4] = 1;
         int[] location = {385, -145};
-        b1[w%4].setLocation(location);
+        //b1[w%4].setLocation(location);
         w++;
         now_bk++;
       }
@@ -112,7 +112,7 @@ class Tetris {
     //  }
     //}
 
-    image(iback, 0, 555, 50, 50);
+    //image(iback, 0, 555, 50, 50);
   }
   void tet_block() {
     bk = b_s.get_te();
@@ -170,7 +170,7 @@ class Tetris {
       }
     }
   }
-}
+//}
 //void keyPressed() {
 //  if (flag == 0) {
 //    if (keyCode == LEFT) {
