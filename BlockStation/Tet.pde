@@ -111,8 +111,9 @@ class Tetris {
     //    rect(140+(term*i), 575, 25, 25, 10);
     //  }
     //}
-
+    iback = loadImage("back.png");
     image(iback, 0, 555, 50, 50);
+  }
   }
   void tet_block() {
     bk = b_s.get_te();
@@ -170,7 +171,7 @@ class Tetris {
       }
     }
   }
-}
+
 //void keyPressed() {
 //  if (flag == 0) {
 //    if (keyCode == LEFT) {
