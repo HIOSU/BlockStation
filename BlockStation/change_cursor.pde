@@ -7,6 +7,12 @@ void change_cursor()
     if ( (mx > 400 && my > 300) && (mx < 600 && my < 340)&& Screencount.equals("main"))
     {
       cursor(HAND);
+    } else if ((mx > width-50 && my > 0) && (mx < width && my < 50)&& Screencount.equals("main")) // main
+    {
+      cursor(HAND);
+    } else if ((mx > width-120 && my > 0) && (mx < width-70 && my < 50)&& Screencount.equals("main")) // main
+    {
+      cursor(HAND);
     } else if ( (mx > 400 && my > 350) && (mx < 600 && my < 390) && Screencount.equals("main"))
     {
       cursor(HAND);
@@ -71,19 +77,19 @@ void change_cursor()
       cursor(HAND);
     } else if ((mx > width - 50 && my > height - 50) && (mx < width & my < height) && Screencount.equals("stage5")) { // re
       cursor(HAND);
-    } else if ((mx > 150 && my > 200) && (mx < 250 & my < 300) && Screencount.equals("stage")  && stagecount1 == true) //1
+    } else if ((mx > 150 && my > 200) && (mx < 250 & my < 300) && Screencount.equals("stage")  && stage.stagecount1 == true) //1
     {
       cursor(HAND);
-    } else if ((mx > 300 && my > 200) && (mx < 400 & my < 300) && Screencount.equals("stage") && stagecount2 == true )
+    } else if ((mx > 300 && my > 200) && (mx < 400 & my < 300) && Screencount.equals("stage") && stage.stagecount2 == true )
     {
       cursor(HAND);
-    } else if ((mx > 450 && my > 200) && (mx < 550 & my < 300) && Screencount.equals("stage")  && stagecount3 == true)
+    } else if ((mx > 450 && my > 200) && (mx < 550 & my < 300) && Screencount.equals("stage")  && stage.stagecount3 == true)
     {
       cursor(HAND);
-    } else if ((mx > 600 && my > 200) && (mx < 700 & my < 300) && Screencount.equals("stage") && stagecount4 == true )
+    } else if ((mx > 600 && my > 200) && (mx < 700 & my < 300) && Screencount.equals("stage") && stage.stagecount4 == true )
     {
       cursor(HAND);
-    } else if ((mx > 750 && my > 200) && (mx < 850 & my < 300) && Screencount.equals("stage") && stagecount5 == true )
+    } else if ((mx > 750 && my > 200) && (mx < 850 & my < 300) && Screencount.equals("stage") && stage.stagecount5 == true )
     {
       cursor(HAND);
     } else

@@ -25,6 +25,8 @@ class Screen
     fill(#000000);
     text("Exit!!",470, 380);
     
+    image(loadImage("re.png"),width-60,5,50,50);
+    image(loadImage("save.png"),width-130,5,50,50);
     //float a = random(0,bs.get_te().length);
     
   }

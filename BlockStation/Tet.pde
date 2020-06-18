@@ -1,44 +1,44 @@
-int time;
-int y = 0;
-int n = 0;
-int j = 5;
-int k = j;
-int l = n;
-int flag = 0;
-int random_t = 0;
-Block[] bk;
-Block drop_bk;
-int now_bk = 0;
-Block next_bk = null;
-int[]b = {0, 0, 0, 0};
-Block[] b1 = {null, null, null, null};
-int w = 0;
-
-
-
-int[][] tet_array = {
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
-  {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
-
 class Tetris {
+  int time;
+  int y = 0;
+  int n = 0;
+  int j = 5;
+  int k = j;
+  int l = n;
+  int flag = 0;
+  int random_t = 0;
+  Block[] bk;
+  Block drop_bk;
+  int now_bk = 0;
+  Block next_bk = null;
+  int[]b = {0, 0, 0, 0};
+  Block[] b1 = {null, null, null, null};
+  int w = 0;
+  int maxscore = 0;
+
+
+
+  int[][] tet_array = {
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -1}, 
+    {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}};
 
   void run_tetris() {
     make_ui();
@@ -59,38 +59,38 @@ class Tetris {
     //if (millis() - time >= 1000) {
     //  time = millis();
 
-      if (drop_bk == null) {
-        drop_bk = bk[1];
-        //drop_bk = next_bk;
-        //next_bk = null;
-      }
-      //if (next_bk == null) {
-      //  random_t = (int)random(1, bk.length);
-      //  next_bk = bk[random_t];
-      //  //nextBlock = blocks[m];
-      //}
-
-      if (drop_bk != null) {
-        draw_array(drop_bk.getArray(), 10, 10, true, drop_bk.getIndex());
-        //draw_array(next_bk.getArray(), 10, 10, true, next_bk.getIndex());
-      }
-      if(tet_array[n+1][j] == 0){
-        draw_array(drop_bk.getArray(), 150, 15, true, drop_bk.getIndex());
-      }
-
-
-      //if (now_bk<4){
-      if (millis() - time >= 1000) {
-        time = millis();
-        b1[w%4] = drop_bk;
-        next_bk = null;
-        b[w%4] = 1;
-        //int[] location = {385, -145};
-        //b1[w%4].setLocation(location);
-        w++;
-        now_bk++;
-      }
+    if (drop_bk == null) {
+      drop_bk = bk[1];
+      //drop_bk = next_bk;
+      //next_bk = null;
     }
+    //if (next_bk == null) {
+    //  random_t = (int)random(1, bk.length);
+    //  next_bk = bk[random_t];
+    //  //nextBlock = blocks[m];
+    //}
+
+    if (drop_bk != null) {
+      draw_array(drop_bk.getArray(), 10, 10, true, drop_bk.getIndex());
+      //draw_array(next_bk.getArray(), 10, 10, true, next_bk.getIndex());
+    }
+    if (tet_array[n+1][j] == 0) {
+      draw_array(drop_bk.getArray(), 150, 15, true, drop_bk.getIndex());
+    }
+
+
+    //if (now_bk<4){
+    if (millis() - time >= 1000) {
+      time = millis();
+      b1[w%4] = drop_bk;
+      next_bk = null;
+      b[w%4] = 1;
+      float[] location = {385, -145};
+      b1[w%4].setLocation(location);
+      w++;
+      now_bk++;
+    }
+
     //if (millis() - time >= 100) {
     //  time = millis();
 
@@ -111,8 +111,8 @@ class Tetris {
     //    rect(140+(term*i), 575, 25, 25, 10);
     //  }
     //}
-
-    //image(iback, 0, 555, 50, 50);
+    iback = loadImage("back.png");
+    image(iback, 0, 555, 50, 50);
   }
   void tet_block() {
     bk = b_s.get_te();
@@ -170,7 +170,7 @@ class Tetris {
       }
     }
   }
-//}
+}
 //void keyPressed() {
 //  if (flag == 0) {
 //    if (keyCode == LEFT) {

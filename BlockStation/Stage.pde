@@ -1,14 +1,18 @@
-
-
 class Stage
 {
+  boolean stagecount1 = true;
+  boolean stagecount2 = false;
+  boolean stagecount3 = false;
+  boolean stagecount4 = false;
+  boolean stagecount5 = false;
+  
   int flag = 0;
   int clear1 = 0;
   int clear2 = 0;
   int clear3 = 0;
   int clear4 = 0;
   int clear5 = 0;
-
+  int p = 0;
   int[][] moba1 =  {
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
     {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, 
@@ -94,7 +98,7 @@ class Stage
   void stage()
   {
     mob = b_s.get_mo();
-    
+
     mobc1s = new int[][][] {
       {{1, 1, 1}, {1, 1, 1}, {1, 1, 1}}, 
       {{1, 1, 1}, {1, 1, 1}, {0, 0, 0}}, 
@@ -164,7 +168,7 @@ class Stage
     };
 
     mobc3 = tes3;
-    
+
     BlockXY(mobc1);
     BlockXY(mobc2);
     BlockXY(mobc3);
@@ -174,9 +178,9 @@ class Stage
 
   void Mstage()
   {
-    snum = 1;
-    snumX = 150;
-    stx = 170;
+    int snum = 1;
+    int snumX = 150;
+    int stx = 170;
     fill(0);
     textFont(basic, 100);
     text("B.Puzzle Stage", 180, 100);
@@ -467,7 +471,7 @@ class Stage
         {{1, 1, 1}, {1, 1, 1}, {1, 0, 0}}, 
         {{0, 0, 0}, {0, 0, 0}, {0, 0, 0}}
       };
-      
+
       Block[][] tes3 = {
         {mob[1].rot(3), mob[2].rot(1), mob[5].copyBlock(), mob[8], mob[9].rot(2), mob[10].rot(3), mob[12].copyBlock(), mob[16].copyBlock(), mob[18].rot(3)}, 
         { mob[19].rot(1), mob[20].copyBlock(), mob[21].copyBlock(), mob[22].copyBlock(), mob[23].rot(3), mob[24].rot(3), mob[27].copyBlock()}

@@ -5,7 +5,6 @@ Tetris tetris = new Tetris();
 Tentris tentris = new Tentris();
 Block_Storage b_s = new Block_Storage();
 
-
 PImage imo;
 PImage ite;
 PImage iten;
@@ -16,30 +15,15 @@ PFont basic;
 PFont mainText;  
 
 String Screencount = "main";
-int snum;
-int snumX;
-int stx;
-int sy;
-int p =0;
-int term = 30;
-int tenx;
-int teny = 80;
-int sizeX = 1000;
-int sizeY = 500;
 int helpcount = 0;
+int cleared_stage = 0;
 
-boolean stagecount1 = false;
-boolean stagecount2 = false;
-boolean stagecount3 = false;
-boolean stagecount4 = false;
-boolean stagecount5 = false;
-
-boolean StartmouseXY = false;
-boolean ExitmouseXY = false;
 boolean CheckM = false;
 
+PrintWriter output;
+
 void settings() {
-  size(sizeX, sizeY);
+  size(1000, 500);
   //  fullScreen();
 }
 
@@ -47,8 +31,18 @@ void setup()
 {
   b_s.storage();
   stage.stage();
+  tet_block();
   noStroke();
 }
+
+void exit() {
+  output = createWriter("save.txt");
+  output.println(tentris.maxscore);
+  output.println(tetris.maxscore);
+  output.flush();
+  output.close();
+} 
+
 void draw()
 {
   now_screen();
