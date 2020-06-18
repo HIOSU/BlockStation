@@ -1,7 +1,7 @@
 Event  event;
 Stage stage = new Stage();
 Screen screen = new Screen();
-//Tetris tetris = new Tetris();
+Tetris tetris = new Tetris();
 Tentris tentris = new Tentris();
 Block_Storage b_s = new Block_Storage();
 
@@ -28,11 +28,11 @@ int sizeX = 1000;
 int sizeY = 500;
 int helpcount = 0;
 
-boolean stagecount1 = true;
-boolean stagecount2 = true;
-boolean stagecount3 = true;
-boolean stagecount4 = true;
-boolean stagecount5 = true;
+boolean stagecount1 = false;
+boolean stagecount2 = false;
+boolean stagecount3 = false;
+boolean stagecount4 = false;
+boolean stagecount5 = false;
 
 boolean StartmouseXY = false;
 boolean ExitmouseXY = false;
@@ -45,11 +45,8 @@ void settings() {
 
 void setup()
 {
-
-
   b_s.storage();
   stage.stage();
-  tentris.setting();
   noStroke();
 }
 void draw()
@@ -88,7 +85,5 @@ void now_screen() {
     tentris.run_tentris();
   } else if (Screencount.equals("tetris")) {
     tetris.run_tetris();
-  } else if (Screencount.equals("tetris")) {
-    tetris.tet_block();
   }
 }
