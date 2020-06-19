@@ -10,6 +10,7 @@ class Tentris {
   int breakCount = 0;
   float nowBlockLocY = 0;
   int nowBlockIndex = 0;
+  int scoreForItem = 0;
 
   int[] a = {0, 0, 0, 0};
   int[] breakindexX = {};
@@ -33,11 +34,7 @@ class Tentris {
   Block[] blocks;
   Block[] a1 = {null, null, null, null};
 
-  //Item item = null;
-
-
-
-
+  Item item = null;
 
   void setting() {
     blocks = b_s.get_ten();
@@ -49,6 +46,9 @@ class Tentris {
   {
     if (deathCount < 3) {
       background(#CBCBCB);
+      if(scoreForItem <= 1000){
+        
+      }
       image(loadImage("data/Image/re.png"), 645, 370, 50, 50);
       image(iback, 0, 380, 50, 50);
       fill(0);
