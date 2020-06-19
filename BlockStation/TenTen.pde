@@ -49,12 +49,12 @@ class Tentris {
   {
     if (deathCount < 3) {
       background(#CBCBCB);
-      image(loadImage("re.png"), 645, 370, 50, 50);
+      image(loadImage("data/Image/re.png"), 645, 370, 50, 50);
       image(iback, 0, 380, 50, 50);
       fill(0);
 
       for (int i = 3; i>deathCount; i--) {
-        image(loadImage("he.png"), 290 - (i * 50), 370, 50, 50);
+        image(loadImage("data/Image/he.png"), 290 - (i * 50), 370, 50, 50);
       }
 
       text("MaxScore. "+maxscore, 70, 30);
@@ -124,7 +124,7 @@ class Tentris {
       }
     } else {
       background(#CBCBCB);
-      image(loadImage("re.png"), 645, 370, 50, 50);
+      image(loadImage("data/Image/re.png"), 645, 370, 50, 50);
       draw_array(tentenArray, 70, 65, false, -1);
       image(iback, 0, 380, 50, 50);
       fill(0);

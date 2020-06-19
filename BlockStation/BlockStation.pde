@@ -16,7 +16,6 @@ PFont mainText;
 
 String Screencount = "main";
 int helpcount = 0;
-int cleared_stage = 0;
 
 boolean CheckM = false;
 
@@ -31,16 +30,19 @@ void setup()
 {
   b_s.storage();
   stage.stage();
-  tet_block();
+  tetris.tet_block();
+  parseFile();
   noStroke();
 }
 
 void exit() {
-  output = createWriter("save.txt");
+  output = createWriter("data/Save/save.txt");
   output.println(tentris.maxscore);
   output.println(tetris.maxscore);
+  output.println(stage.cs());
   output.flush();
   output.close();
+  super.exit();
 } 
 
 void draw()
@@ -79,5 +81,33 @@ void now_screen() {
     tentris.run_tentris();
   } else if (Screencount.equals("tetris")) {
     tetris.run_tetris();
+  }
+}
+void parseFile() {
+  BufferedReader reader = createReader("data/Save/save.txt");
+  String line = "";
+  String[] a = {};
+  try {
+    while ((line = reader.readLine()) != null) {
+      a = append(a, line);
+    }
+  }
+  catch (IOException e) {
+    e.printStackTrace();
+  }
+  tentris.maxscore = parseInt(a[0]);
+  tetris.maxscore = parseInt(a[1]);
+  int sta = parseInt(a[2]);
+  if (sta >= 2) {
+    stage.stagecount2 = true;
+  } 
+  if (sta >= 3) {
+    stage.stagecount3 = true;
+  }
+  if (sta >= 4) {
+    stage.stagecount4 = true;
+  }
+  if (sta >= 5) {
+    stage.stagecount5 = true;
   }
 }

@@ -3,21 +3,12 @@ void mouseReleased()
 {
   double mx = mouseX;
   double my = mouseY;
-  
+
   if ((mx > 400 && my > 300) && (mx < 600 && my < 340) && Screencount.equals("main")) // main
   {
     background(#CBCBCB);
     Screencount = "select";
-  }
-  else if ((mx > 400 && my > 350) && (mx < 600 && my < 390)&& Screencount.equals("main")) // main
-  {
-    exit();
-  }
-  else if ((mx > width-60 && my > 5) && (mx < width-10 && my < 55)&& Screencount.equals("main")) // main
-  {
-    exit();
-  }
-  else if ((mx > width-130 && my > 5) && (mx < width-80 && my < 55)&& Screencount.equals("main")) // main
+  } else if ((mx > 400 && my > 350) && (mx < 600 && my < 390)&& Screencount.equals("main")) // main
   {
     exit();
   }
@@ -414,7 +405,7 @@ void BlockP(Block [][] block, int [][][] blocks)
         block[stage.p][i].setIsCilcked(true);
         blocks[stage.p][i/3][i%3] = 0;
         CheckM = true;
-        //          noCursor();
+        noCursor();
       }
     }
   }

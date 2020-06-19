@@ -5,7 +5,7 @@ class Stage
   boolean stagecount3 = false;
   boolean stagecount4 = false;
   boolean stagecount5 = false;
-  
+
   int flag = 0;
   int clear1 = 0;
   int clear2 = 0;
@@ -163,7 +163,7 @@ class Stage
     mobc4 = tes4;
 
     Block[][] tes3 = {
-      {mob[1].rot(3), mob[2].rot(1), mob[5].copyBlock(), mob[8], mob[9].rot(2), mob[10].rot(3), mob[12].copyBlock(), mob[16].copyBlock(), mob[18].rot(3)}, 
+      {mob[1].rot(3), mob[2].rot(1), mob[5].copyBlock(), mob[8].copyBlock(), mob[9].rot(2), mob[10].rot(3), mob[12].copyBlock(), mob[16].copyBlock(), mob[18].rot(3)}, 
       { mob[19].rot(1), mob[20].copyBlock(), mob[21].copyBlock(), mob[22].copyBlock(), mob[23].rot(3), mob[24].rot(3), mob[27].copyBlock()}
     };
 
@@ -199,14 +199,14 @@ class Stage
     snumX = 150;
     stx = 170;
 
-    iback = loadImage("back.png");
+    iback = loadImage("data/Image/back.png");
     image(iback, 0, 450, 50, 50);
   }
 
   void Chapter1()
   {
     background(#CBCBCB);
-    image(loadImage("re.png"), width - 50, height - 50, 50, 50);
+    image(loadImage("data/Image/re.png"), width - 50, height - 50, 50, 50);
     draw_array(moba1, 700, 250, false, -1);
     if (clear1 == 1) {
       fill(0);
@@ -221,7 +221,6 @@ class Stage
     {
       for (int b= 0; b < mobc1[p].length; b++)
       {
-
         if (mobc1s[p][b/3][b%3] == 1 || mobc1[p][b].isCilcked == true)
         {
           draw_array(mobc1[p][b].getArray(), mobc1[p][b].getLocation()[0], mobc1[p][b].getLocation()[1], true, mobc1[p][b].getIndex());
@@ -231,7 +230,7 @@ class Stage
 
     textFont(basic, 50);
     text("Stage.1", 400, 70);
-    iback = loadImage("back.png");
+    iback = loadImage("data/Image/back.png");
     image(iback, 0, 650, 50, 50);
   }
 
@@ -239,7 +238,7 @@ class Stage
   {
 
     background(#CBCBCB);
-    image(loadImage("re.png"), width - 50, height - 50, 50, 50);
+    image(loadImage("data/Image/re.png"), width - 50, height - 50, 50, 50);
     draw_array(moba2, 650, 150, false, -1);
     if (clear2 == 1) {
       fill(0);
@@ -262,14 +261,14 @@ class Stage
 
     textFont(basic, 50);
     text("Stage.2", 400, 70);
-    iback = loadImage("back.png");
+    iback = loadImage("data/Image/back.png");
     image(iback, 0, 650, 50, 50);
   }
 
   void Chapter3()
   {
     background(#CBCBCB);
-    image(loadImage("re.png"), width - 50, height - 50, 50, 50);
+    image(loadImage("data/Image/re.png"), width - 50, height - 50, 50, 50);
     draw_array(moba3, 700, 150, false, -1);
     if (clear3 == 1) {
       fill(0);
@@ -299,7 +298,7 @@ class Stage
   {
 
     background(#CBCBCB);
-    image(loadImage("re.png"), width - 50, height - 50, 50, 50);
+    image(loadImage("data/Image/re.png"), width - 50, height - 50, 50, 50);
     draw_array(moba4, 700, 150, false, -1);
     if (clear4 == 1) {
       fill(0);
@@ -325,7 +324,7 @@ class Stage
   void Chapter5()
   {
     background(#CBCBCB);
-    image(loadImage("re.png"), width - 50, height - 50, 50, 50);
+    image(loadImage("data/Image/re.png"), width - 50, height - 50, 50, 50);
     draw_array(moba5, 800, 150, false, -1);
     if (clear5 == 1) {
       fill(0);
@@ -344,7 +343,7 @@ class Stage
     }
     textFont(basic, 50);
     text("Stage.5", 400, 70);
-    iback = loadImage("back.png");
+    iback = loadImage("data/Image/back.png");
     image(iback, 0, 650, 50, 50);
   }
 
@@ -540,6 +539,19 @@ class Stage
       mobc5 = tes5;
       BlockXY(mobc5);
       clear5 = 0;
+    }
+  }
+  int cs() {
+    if (stagecount5 == true) {
+      return 5;
+    }else if (stagecount4 == true) {
+      return 4;
+    }else if (stagecount3 == true) {
+      return 3;
+    }else if (stagecount2 == true) {
+      return 2;
+    }else {
+      return 1;
     }
   }
 }

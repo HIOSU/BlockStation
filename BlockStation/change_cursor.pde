@@ -7,13 +7,7 @@ void change_cursor()
     if ( (mx > 400 && my > 300) && (mx < 600 && my < 340)&& Screencount.equals("main"))
     {
       cursor(HAND);
-    } else if ((mx > width-50 && my > 0) && (mx < width && my < 50)&& Screencount.equals("main")) // main
-    {
-      cursor(HAND);
-    } else if ((mx > width-120 && my > 0) && (mx < width-70 && my < 50)&& Screencount.equals("main")) // main
-    {
-      cursor(HAND);
-    } else if ( (mx > 400 && my > 350) && (mx < 600 && my < 390) && Screencount.equals("main"))
+    }  else if ( (mx > 400 && my > 350) && (mx < 600 && my < 390) && Screencount.equals("main"))
     {
       cursor(HAND);
     } else if ((mx > 50 && my > 70) && (mx < 250 & my < 420) && Screencount.equals("select")  )
