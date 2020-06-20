@@ -58,13 +58,13 @@ void now_screen() {
     screen.Gameselection();
   } else if (Screencount.equals("select") && helpcount == 1) {
     screen.Gameselection();
-    rect(350, 100, 300, 300);
+    image(loadImage("data/Image/helpPuzzle.png"), 188, 58);
   } else if (Screencount.equals("select") && helpcount == 2) {
     screen.Gameselection();
-    rect(350, 100, 300, 300);
+    image(loadImage("data/Image/helpTet.png"), 220, 50);
   } else if (Screencount.equals("select") && helpcount == 3) {
     screen.Gameselection();
-    rect(350, 100, 300, 300);
+    image(loadImage("data/Image/helpTen.png"), 99, 6);
   } else if (Screencount.equals("stage")) {
     stage.Mstage();
   } else if (Screencount.equals("stage1")) {

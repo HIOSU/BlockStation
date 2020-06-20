@@ -1,4 +1,4 @@
-//<>// //<>// //<>//
+//<>// //<>// //<>// //<>//
 void mouseReleased()
 {
   double mx = mouseX;
@@ -11,7 +11,19 @@ void mouseReleased()
   } else if ((mx > 400 && my > 350) && (mx < 600 && my < 390)&& Screencount.equals("main")) // main
   {
     exit();
-  }
+  }else if (Screencount.equals("select") && helpcount == 1 )// helpback
+  {
+    background(#CBCBCB);
+    helpcount = 0;
+  } else if (Screencount.equals("select") && helpcount == 2 )// helpback
+  {
+    background(#CBCBCB);
+    helpcount = 0;
+  } else if (Screencount.equals("select") && helpcount == 3 )// helpback
+  {
+    background(#CBCBCB);
+    helpcount = 0;
+  } 
   //if (StartmouseXY() && Screencount.equals("select"))  //Gameselection
   //{
   //  background(#CBCBCB);
@@ -69,18 +81,6 @@ void mouseReleased()
   {
     background(#CBCBCB);
     Screencount = "main";
-  } else if ((mx > 0  && my > 450) && (mx < 50 & my < 500) && Screencount.equals("select") && helpcount == 1 )// helpback
-  {
-    background(#CBCBCB);
-    helpcount = 0;
-  } else if ((mx > 0  && my > 450) && (mx < 50 & my < 500) && Screencount.equals("select") && helpcount == 2 )// helpback
-  {
-    background(#CBCBCB);
-    helpcount = 0;
-  } else if ((mx > 0  && my > 450) && (mx < 50 & my < 500) && Screencount.equals("select") && helpcount == 3 )// helpback
-  {
-    background(#CBCBCB);
-    helpcount = 0;
   } else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage1") && CheckM == false) // stage P
   {
     if (stage.p == 2)
