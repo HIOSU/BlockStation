@@ -26,7 +26,7 @@ void mouseReleased()
     helpcount = 3;
   } else if ((mx > 400  && my > 70) && (mx < 600 & my < 420) && Screencount.equals("select") && helpcount == 0 ) //Gameselection 
   {
-    surface.setSize(520, 605);
+    surface.setSize(525, 640);
     background(#CBCBCB);
     Screencount = "tetris";
   } else if ((mx > 770  && my > 70) && (mx < 970 & my < 420) && Screencount.equals("select") && helpcount == 0 ) //Gameselection 
@@ -207,7 +207,7 @@ void mouseReleased()
     stage.p=0;
     background(#CBCBCB);
     Screencount = "stage";
-  } else if ((mx > 0 && my > 555) && (mx < 50 & my < 605) && Screencount.equals("tetris")  ) // back
+  } else if ((mx > 0 && my > height-50) && (mx < 50 & my < height) && Screencount.equals("tetris")  ) // back
   {
     surface.setSize(1000, 500);
     background(#CBCBCB);
@@ -217,6 +217,12 @@ void mouseReleased()
     surface.setSize(1000, 500);
     background(#CBCBCB);
     Screencount = "select";
+  } else if ((mx > 90 && my > height-50) && (mx < 140 & my < height) && Screencount.equals("tetris")  ) // re
+  {
+    tetris.reset();
+  } else if (mx > 540&& my > 180 && mx < 630 && my < 270 && Screencount.equals("tentris")) {
+    tentris.item.runItem();
+    tentris.item = null;
   } else if ((mx > width - 50 && my > height - 50) && (mx < width & my < height) && Screencount.equals("tentris")) { // re
     tentris.reset();
   } else if ((mx > width - 50 && my > height - 50) && (mx < width & my < height) && Screencount.equals("stage1")) { // re
@@ -251,28 +257,6 @@ void mouseReleased()
   } else if (Screencount.equals("tetris")) {
     //tetris.tet_block();
   }
-
-  //for (int i= 0; i < stage.getMobc1()[p].length; i++)
-  //{
-  //  if (stage.getMobc1()[p][i].getIsCilcked() == true)
-  //  {
-  //    if (mouseX > 700)// && mouseY > 250 && mouseX < 700+(30*j) && mouseY < 250+(30*i
-  //    {
-  //      stage.getMobc1()[p][i].setBflag(true);
-  //    }
-  //    else 
-  //    {
-  //      stage.xy = new int[] {155*(i%3), 110+(135*((int)(i/3)))};
-  //      stage.mobc1[p][i].setLocation(stage.xy);
-  //      if (stage.getMobc1()[p][i].getBflag() == false)
-  //      {
-  //        stage.getMobc1s()[p][i/3][i%3] = 1;
-  //      }
-  //    }
-
-  //    stage.getMobc1()[p][i].setIsCilcked(false);
-  //  }
-  //}
 }
 
 void mousePressed()
@@ -626,4 +610,14 @@ int[][] test(Block block, int[][] r, int arrayX, int arrayY)
   //  //print(((700 - (block[p][i].getBlockArea()[0]))));
   //  block[p][i].setBflag(true);
   //  CheckM = false;
+}
+void keyPressed() {
+  if (Screencount.equals("tetris")) {
+    tetris.tetrisKeyEventP();
+  }
+}
+void keyReleased() {
+  if (Screencount.equals("tetris")) {
+    tetris.tetrisKeyEventR();
+  }
 }

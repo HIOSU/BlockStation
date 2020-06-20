@@ -52,7 +52,10 @@ void change_cursor()
     } else if ((mx > 150*3  && my > (150*3)+110) && (mx < (150*3)+20 & my < (150*3)+110+20) && Screencount.equals("stage5")||((mx > 10  && my > (150*3)+110) && (mx < 10+20 & my < (150*3)+110+20) && Screencount.equals("stage2")))
     {
       cursor(HAND);
-    } else if ((mx > 0 && my > 555) && (mx < 50 & my < 605) && Screencount.equals("tetris")  ) // back
+    } else if ((mx > 0 && my > height-50) && (mx < 50 & my < height) && Screencount.equals("tetris")  ) // back
+    {
+      cursor(HAND);
+    } else if ((mx > 90 && my > height-50) && (mx < 140 & my < height) && Screencount.equals("tetris")  ) // re
     {
       cursor(HAND);
     } else if ((mx > 0 && my > 380) && (mx < 50 & my < 430) && Screencount.equals("tentris")  ) // back
@@ -70,6 +73,7 @@ void change_cursor()
     } else if ((mx > width - 50 && my > height - 50) && (mx < width & my < height) && Screencount.equals("stage4")) { // re
       cursor(HAND);
     } else if ((mx > width - 50 && my > height - 50) && (mx < width & my < height) && Screencount.equals("stage5")) { // re
+    
       cursor(HAND);
     } else if ((mx > 150 && my > 200) && (mx < 250 & my < 300) && Screencount.equals("stage")  && stage.stagecount1 == true) //1
     {

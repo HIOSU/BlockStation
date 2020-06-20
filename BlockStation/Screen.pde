@@ -6,10 +6,12 @@ class Screen
   }
   void Gamemain()
   {
+    background(#CBCBCB);
     mainText = loadFont("data/Font/Arial-Black-48.vlw");
     fill(#000000);
-    textFont(mainText,70);
-    text("Block Station",275, 200);
+    image(loadImage("data/Image/title.png"),215,119);
+    //textFont(mainText,70);
+    //text("Block Station",275, 200);
   
     fill(#EDFC7D);
     rect(400,300,200,40,20);

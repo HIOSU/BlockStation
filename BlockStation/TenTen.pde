@@ -10,7 +10,7 @@ class Tentris {
   int breakCount = 0;
   float nowBlockLocY = 0;
   int nowBlockIndex = 0;
-  int scoreForItem = 0;
+  int scoreForItem = 1;
 
   int[] a = {0, 0, 0, 0};
   int[] breakindexX = {};
@@ -45,10 +45,8 @@ class Tentris {
   void tentris()
   {
     if (deathCount < 3) {
+
       background(#CBCBCB);
-      if(scoreForItem <= 1000){
-        
-      }
       image(loadImage("data/Image/re.png"), 645, 370, 50, 50);
       image(iback, 0, 380, 50, 50);
       fill(0);
@@ -67,7 +65,14 @@ class Tentris {
       stroke(255, 255, 000);
       strokeWeight(9);
       line(385, 373, 530, 373);
-
+      if (score / 1000 >= scoreForItem) {
+        item = new Item();
+        item.setNowItem();
+        scoreForItem ++;
+      }
+      if (item != null && item.nowImage != null) {
+        image(item.nowImage, 550, 190, 70, 70);
+      }
       if (nextBlock == null) {
         int m = (int)random(1, blocks.length);
         int rot_num = (int)random(3);
@@ -166,7 +171,8 @@ class Tentris {
     nowBlockLocY = 0;
     nowBlockIndex = 0;
     flag = 0;
-
+    item = null;
+    scoreForItem = 1;
     a = new int[] {0, 0, 0, 0};
 
     tentenArray = new int[][] {
@@ -229,22 +235,22 @@ class Tentris {
 
         for (int i = 0; i< tentenArray.length; i++) {
           int[] foo = {};
-          
+
           for (int j = 0; j< nowBlock.getBlockArea()[0]; j++) {
             foo = (int[])append(foo, 0);
           }
-          
+
           for (int j = 0; j< tentenArray[i].length; j++) {
             foo = (int[]) append(foo, tentenArray[i][j]);
           }
-          
+
           for (int j = 0; j< (4-nowBlock.getBlockArea()[2]); j++) {
             foo = (int[])append(foo, 0);
           }
-          
+
           newArray = (int[][])append(newArray, foo);
         }
-        
+
         for (int i = 0; i < 4-nowBlock.getBlockArea()[3]; i++) 
         {
           int[] qw = {};
@@ -320,7 +326,7 @@ class Tentris {
       }
     }
 
-    cursor(ARROW);
+    CheckM = false;
   }
 
   void checkBreak() {

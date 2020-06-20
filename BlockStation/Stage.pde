@@ -182,8 +182,9 @@ class Stage
     int snumX = 150;
     int stx = 170;
     fill(0);
-    textFont(basic, 100);
-    text("B.Puzzle Stage", 180, 100);
+    image(loadImage("data/Image/puzzle.png"),180,50);
+    //textFont(basic, 100);
+    //text("B.Puzzle Stage", 180, 100);
     for (int i = 0; i < 5; i++)
     {
       fill(128);

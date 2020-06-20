@@ -77,14 +77,6 @@ class Block_Storage {
     te = (Block[])append(te, new Block( q, co, tei++));
     mo = (Block[])append(mo, new Block( q, co, moi++));
 
-    q = new int [][] {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 1, 1, 0, 0}, {0, 0, 1, 1, 0}, {0, 0, 0, 0, 0}};
-    co = new int[] {000, 051, 102};
-    te = (Block[])append(te, new Block( q, co, tei++));   
-
-    q = new int [][] {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 1, 1, 0}, {0, 1, 1, 0, 0}, {0, 0, 0, 0, 0}};
-    co = new int[] {000, 051, 051};
-    te = (Block[])append(te, new Block( q, co, tei++));
-
     //5
     q = new int[][] {{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {1, 1, 1, 1, 1}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}};
     co = new int[] {000, 102, 102};
@@ -95,7 +87,6 @@ class Block_Storage {
     co = new int[] {000, 153, 153};
     ten = (Block[])append(ten, new Block( q, co, teni++));
     mo = (Block[])append(mo, new Block( q, co, moi++));
-    te = (Block[])append(te, new Block( q, co, tei++));
 
     q = new int[][] {{0, 0, 0, 0, 0}, {0, 0, 1, 0, 0}, {0, 0, 1, 0, 0}, {0, 1, 1, 1, 0}, {0, 0, 0, 0, 0}};
     co = new int[] {000, 204, 255};
